@@ -424,7 +424,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         try:
             buttons = [
                     [
-                        InlineKeyboardButton('Group', url='https://t.me/slmovieshubsl '),
+                        InlineKeyboardButton('Group', url='https://t.me/slmovieshubsl'),
                         InlineKeyboardButton('Tv Series', url='https://t.me/timelytvshow'),
                     ]
                     ]
