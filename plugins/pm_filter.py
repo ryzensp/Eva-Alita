@@ -429,6 +429,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     ]
                     ]
             msg = await client.send_cached_media(
+                f'<b> Hai 👋 {query.from_user.mention} </b>😍\n\n<b>📫 Your File is Ready</b>\n\n',
                 chat_id=AUTH_CHANNEL,
                 file_id=file_id,
                 caption=f_caption,
