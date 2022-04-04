@@ -264,11 +264,17 @@ async def start(client, message: pyrogram.types.Message):
             f_caption=f_caption
     if f_caption is None:
         f_caption = f"{files.file_name}"
+    buttons = [
+                    [
+                     InlineKeyboardButton(' Updates ', url='https://t.me/Series2Day'),
+                    ]
+                    ]
     await client.send_cached_media(
         chat_id=message.from_user.id,
         file_id=file_id,
         caption=f_caption,
         protect_content=True if pre == 'filep' else False,
+        reply_markup=InlineKeyboardMarkup(buttons)
         )
                     
 
