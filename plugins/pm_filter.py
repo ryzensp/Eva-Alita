@@ -422,7 +422,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             mention = f"{query.from_user.mention}"
 
         try:
-        buttons = [
+            buttons = [
                     [
                         InlineKeyboardButton('Group', url='https://t.me/slmovieshubsl '),
                         InlineKeyboardButton('Tv Series', url='https://t.me/timelytvshow'),
