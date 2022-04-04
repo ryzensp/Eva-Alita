@@ -424,8 +424,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
         try:
             buttons = [
                     [
-                        InlineKeyboardButton('Group', url='https://t.me/slmovieshubsl'),
-                        InlineKeyboardButton('Tv Series', url='https://t.me/timelytvshow'),
+                        InlineKeyboardButton('Series', url='https://t.me/NasraniSeries'),
+                        InlineKeyboardButton('Movies', url='https://t.me/nasrani_update'),
                     ]
                     ]
             msg = await client.send_cached_media(
