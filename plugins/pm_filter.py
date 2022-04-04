@@ -432,6 +432,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 chat_id=AUTH_CHANNEL,
                 file_id=file_id,
                 caption=f'<b> 𝐇𝐞𝐲 👋 {query.from_user.mention} </b>😍\n\n<b> FILE : <code>{file_name}</code> \nSize : <i>{file_size}</i>\nCAPTION: {file_caption} \n ⚠️  കോപ്പി റൈറ്റ് ഉള്ളത് കൊണ്ട് ഈ ഒരു ഫയൽ 1 മിനിറ്റ് കൊണ്ട് ഇവിടെ നിന്നും ഡിലേറ്റാവും...!!! \nഇവിടെ നിന്നും വേറെ എവിടേലും മാറ്റിയതിന് ശേഷം ഡൗൺലോഡ് ചെയ്യുക...!!! \nFILES FORWARD TO YOUR SAVED MESSAGES \nAll files here Gets Deleted With in 1 Minutes \n╔════ ᴊᴏɪɴ ᴡɪᴛʜ ᴜs ═════╗\n♻️ 𝙅𝙊𝙄𝙉 :- @nasrani_update\n♻️ 𝙅𝙊𝙄𝙉 :- @NasraniSeries\n    ╚════ ᴊᴏɪɴ ᴡɪᴛʜ ᴜs ═════╝</b>\n\n',
+                True,
+                'html',
                 protect_content=True if ident == "filep" else False,
                 reply_markup=InlineKeyboardMarkup(buttons)
                     
@@ -448,7 +450,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                             InlineKeyboardButton('📥 Download 📥 ', url = msg.link)
                         ],                       
                         [
-                            InlineKeyboardButton("⚠️ Can't Access ❓ Click Here ⚠️", url=f'https://t.me/+yNGRugwc4FkwNGQ1')
+                            InlineKeyboardButton("⚠️ Can't Access ❓ Click Here ⚠️", url=f'https://t.me/+Md9dwytUK1NhNTc9')
                         ]
                     ]
                 )
