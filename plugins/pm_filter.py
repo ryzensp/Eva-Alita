@@ -429,10 +429,9 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     ]
                     ]
             msg = await client.send_cached_media(
-                f'<b> Hai 👋 {query.from_user.mention} </b>😍\n\n<b>📫 Your File is Ready</b>\n\n',
                 chat_id=AUTH_CHANNEL,
                 file_id=file_id,
-                caption=f_caption,
+                caption=f'<b> Hai 👋 {query.from_user.mention} </b>😍\n\n<b>📫 Your File is Ready</b>\n\n',
                 protect_content=True if ident == "filep" else False,
                 reply_markup=InlineKeyboardMarkup(buttons)
                     
