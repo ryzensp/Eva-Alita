@@ -183,6 +183,8 @@ async def start(client, message: pyrogram.types.Message):
                         ]
                     )
                 )         
+                await asyncio.sleep(15)
+                await k.delete()       
         
                 
 
@@ -190,7 +192,7 @@ async def start(client, message: pyrogram.types.Message):
             except FloodWait as e:
                 await asyncio.sleep(e.x)
                 logger.warning(f"Floodwait of {e.x} sec.")
-                await client.send_cached_media(
+             fmsg = await client.send_cached_media(
                     chat_id=AUTH_CHANNEL,
                     file_id=msg.get("file_id"),
                     caption=f_caption,
@@ -208,8 +210,8 @@ async def start(client, message: pyrogram.types.Message):
                         ]
                     )
                 ) 
-                return await asyncio.sleep(15)
-                await k.delete()       
+                await asyncio.sleep(15)
+                await fmsg.delete()       
         
                     
             except Exception as e:
