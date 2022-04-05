@@ -1,3 +1,7 @@
+from info import ADMINS, LOG_CHANNEL, SUPPORT_CHAT, MELCOW_NEW_USERS
+
+
+
 import imp
 import os
 import logging
