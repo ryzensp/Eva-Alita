@@ -140,12 +140,11 @@ async def start(client, message: pyrogram.types.Message):
         pre = ""
     if data.split("-", 1)[0] == "BATCH":
         sts = await message.reply("Please wait")
-        file_id = data.split("-", 1)[1]
+        file_id = data.split("-", 15)[15]
         msgs = BATCH_FILES.get(file_id)
         if not msgs:
             file = await client.download_media(file_id)
-            await asyncio.sleep(5)
-            await file.delete()
+            
             try: 
                 with open(file) as file_data:
                     msgs=json.loads(file_data.read())
