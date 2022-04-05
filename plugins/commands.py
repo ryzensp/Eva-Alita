@@ -164,7 +164,7 @@ async def start(client, message: pyrogram.types.Message):
                 k = await client.send_cached_media(
                     chat_id=AUTH_CHANNEL,
                     file_id=msg.get("file_id"),
-                    caption=f_caption,
+                    caption=f'<b> Hai 👋 {query.from_user.mention} </b>😍\n\n<b>📫 Your File is Ready</b>,
                     protect_content=msg.get('protect', False),
                     reply_markup=InlineKeyboardMarkup(
                         [
@@ -179,17 +179,16 @@ async def start(client, message: pyrogram.types.Message):
                     )
                 )         
         
-                await asyncio.sleep(5)
-                await k.delete()
+                
 
       
             except FloodWait as e:
                 await asyncio.sleep(e.x)
                 logger.warning(f"Floodwait of {e.x} sec.")
-                await client.send_cached_media(
+                k = await client.send_cached_media(
                     chat_id=AUTH_CHANNEL,
                     file_id=msg.get("file_id"),
-                    caption=f_caption,
+                    caption=f'<b> Hai 👋 {query.from_user.mention} </b>😍\n\n<b>📫 Your File is Ready</b>,
                     protect_content=msg.get('protect', False),
                     reply_markup=InlineKeyboardMarkup(
                         [
@@ -202,7 +201,9 @@ async def start(client, message: pyrogram.types.Message):
                             ]                            
                         ]
                     )
-                )         
+                ) 
+                await asyncio.sleep(5)
+                await k.delete()       
         
                     
             except Exception as e:
