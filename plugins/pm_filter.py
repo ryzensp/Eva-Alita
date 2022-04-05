@@ -1196,10 +1196,13 @@ async def advantage_spell_chok(msg):
         await k.delete()
         return
     SPELL_CHECK[msg.message_id] = movielist
-    btn = [InlineKeyboardButton(text="🔍ɢᴏᴏɢʟᴇ🔎", url=f'https://google.com/search?q={query}')]
-    await msg.reply("Google, click on any button labeled Google and find the correct movie name and enter it here Movie / Tv. Web Series will get ..\n\nIf you still do not get it. Movie Name & year after @admin. Example: Add @admin kala 2020 to the group in this way. The admin will upload within 24 hours\n\nIf you ask for a movie that has been released in theaters, you will not get it",
-                    reply_markup=InlineKeyboardMarkup(btn))
-
+    btn = [[
+                InlineKeyboardButton(
+                    text=movie.strip(),
+                    callback_data=f"spolling#{user}#{k}",
+                )
+            ] for k, movie in enumerate(movielist)]    
+    
 async def manual_filters(client, message, text=False):
     group_id = message.chat.id
     name = text or message.text
