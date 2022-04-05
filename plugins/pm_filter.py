@@ -1092,6 +1092,25 @@ async def auto_filter(client, msg: pyrogram.types.Message, spoll=False):
         ]
     )
 
+        await query.message.edit_text(
+            text="▣▢▢▢▢▢"
+        )
+        await query.message.edit_text(
+            text="▣▣▢▢▢▢"
+        )
+        await query.message.edit_text(
+            text="▣▣▣▢▢▢"
+        )
+        await query.message.edit_text(
+            text="▣▣▣▣▢▢"
+        )
+        await query.message.edit_text(
+            text="▣▣▣▣▣▢"
+        )
+        await query.message.edit_text(
+            text="▣▣▣▣▣▣"
+        )
+
     if offset != "":
         key = f"{message.chat.id}-{message.message_id}"
         BUTTONS[key] = search
