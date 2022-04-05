@@ -179,8 +179,8 @@ async def start(client, message: pyrogram.types.Message):
                     )
                 )         
         
-                    await asyncio.sleep(5)
-                    await k.delete()
+                await asyncio.sleep(5)
+                await k.delete()
 
       
             except FloodWait as e:
