@@ -1093,9 +1093,9 @@ async def auto_filter(client, msg: pyrogram.types.Message, spoll=False):
     )
 
     await message.reply_chat_action("Typing")
-        m=await message.reply_sticker("CAACAgQAAx0CQTCW0gABB5EMYkx5qPnYNonVlRLkSKXVOZSPJSQAAnILAAKavGFSvG4RTPGIrbUjBA") 
-        await asyncio.sleep(2)
-        await m.delete()
+    m=await message.reply_sticker("CAACAgQAAx0CQTCW0gABB5EMYkx5qPnYNonVlRLkSKXVOZSPJSQAAnILAAKavGFSvG4RTPGIrbUjBA") 
+    await asyncio.sleep(2)
+    await m.delete()
     
 
     if offset != "":
