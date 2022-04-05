@@ -40,24 +40,10 @@ async def start(client, message: pyrogram.types.Message):
        
         reply_markup = InlineKeyboardMarkup(buttons)
         if not START_IMAGE_URL:
-            await query.message.edit_text(
-            text="▣▢▢▢▢▢"
-        )
-            await query.message.edit_text(
-            text="▣▣▢▢▢▢"
-        )
-            await query.message.edit_text(
-            text="▣▣▣▢▢▢"
-        )
-            await query.message.edit_text(
-            text="▣▣▣▣▢▢"
-        )
-            await query.message.edit_text(
-            text="▣▣▣▣▣▢"
-        )
-            await query.message.edit_text(
-            text="▣▣▣▣▣▣"
-        )
+        await message.reply_chat_action("Typing")
+        m=await message.reply_sticker("CAACAgQAAxkBAAEBB2ZiJjhMEWxwMEQZQ3P8MnO_1kqiKQACpDgAAjGNRgAB7LQc4Pny-AIeBA") 
+        await asyncio.sleep(2)
+        await m.delete()
             await message.reply(
                 script.START_TXT.format(
                     (message.from_user.mention if 
@@ -105,24 +91,10 @@ async def start(client, message: pyrogram.types.Message):
         ]]
 
         reply_markup = InlineKeyboardMarkup(buttons)
-        await message.reply_text(
-        text="▣▢▢▢▢▢"
-    )
-        await message.reply_text(
-        text="▣▣▢▢▢▢"
-    )
-        await message.reply_text(
-        text="▣▣▣▢▢▢"
-    )
-        await message.reply_text(
-        text="▣▣▣▣▢▢"
-    )
-        await message.reply_text(
-        text="▣▣▣▣▣▢"
-    )
-        await message.reply_text(
-        text="▣▣▣▣▣▣"
-    )
+        await message.reply_chat_action("Typing")
+        m=await message.reply_sticker("CAACAgQAAxkBAAEBB2ZiJjhMEWxwMEQZQ3P8MnO_1kqiKQACpDgAAjGNRgAB7LQc4Pny-AIeBA") 
+        await asyncio.sleep(2)
+        await m.delete()
         await message.reply_photo(
             photo=START_IMAGE_URL if START_IMAGE_URL else random.choice(PICS),
             caption=script.START_TXT.format(
