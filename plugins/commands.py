@@ -224,8 +224,8 @@ async def start(client, message: pyrogram.types.Message):
                 except Exception as e:
                     logger.exception(e)
                     continue
-            await asyncio.sleep(1) 
-        return await sts.delete()
+            await asyncio.sleep(5)
+        return await msgs.delete()
         
 
     files_ = await get_file_details(file_id)           
