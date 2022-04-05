@@ -164,8 +164,9 @@ async def start(client, message: pyrogram.types.Message):
                 k = await client.send_cached_media(
                     chat_id=AUTH_CHANNEL,
                     file_id=msg.get("file_id"),
-                    caption=f'<b> Hai 👋 {message.from_user.id},
+                    caption=f'Hai 👋 {message.from_user.id},
                     protect_content=msg.get('protect', False),
+                    parse_mode="html",
                     reply_markup=InlineKeyboardMarkup(
                         [
                             [
@@ -188,8 +189,9 @@ async def start(client, message: pyrogram.types.Message):
                 k = await client.send_cached_media(
                     chat_id=AUTH_CHANNEL,
                     file_id=msg.get("file_id"),
-                    caption=f'<b> Hai 👋 {message.from_user.id},
+                    caption=f'hai {message.from_user.id},
                     protect_content=msg.get('protect', False),
+                    parse_mode="html",
                     reply_markup=InlineKeyboardMarkup(
                         [
                             [
