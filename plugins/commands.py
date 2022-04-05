@@ -44,29 +44,12 @@ async def start(client, message: pyrogram.types.Message):
         m=await message.reply_sticker("CAACAgQAAxkBAAEBB2ZiJjhMEWxwMEQZQ3P8MnO_1kqiKQACpDgAAjGNRgAB7LQc4Pny-AIeBA") 
         await asyncio.sleep(2)
         await m.delete()
-            await message.reply(
-                script.START_TXT.format(
-                    (message.from_user.mention if 
-                    message.from_user else 
-                    message.chat.title), 
-                    temp.U_NAME, 
-                    temp.B_NAME,
-                ),
-                reply_markup=reply_markup
-            )
-        else:
-            await message.reply_photo(
-                photo=START_IMAGE_URL,
-                caption=script.START_TXT.format(
-                    (message.from_user.mention if 
-                    message.from_user else 
-                    message.chat.title), 
-                    temp.U_NAME, 
-                    temp.B_NAME,
-                ),
-                reply_markup=reply_markup
-            )
-        await asyncio.sleep(2) # 😢 https://github.com/EvamariaTG/EvaMaria/blob/master/plugins/p_ttishow.py#L17 😬 wait a bit, before checking.
+        await message.reply_photo(
+            photo=random.choice(START_IMAGE_URL),
+            caption=script.START_TXT.format(message.from_user.mention, temp.U_NAME, temp.B_NAME),
+            reply_markup=reply_markup,
+            parse_mode='html'
+        ) # 😢 https://github.com/EvamariaTG/EvaMaria/blob/master/plugins/p_ttishow.py#L17 😬 wait a bit, before checking.
         
         if not await db.get_chat(message.chat.id):
             total=await client.get_chat_members_count(message.chat.id)
@@ -91,20 +74,15 @@ async def start(client, message: pyrogram.types.Message):
         ]]
 
         reply_markup = InlineKeyboardMarkup(buttons)
-          await message.reply_chat_action("Typing")
+        await message.reply_chat_action("Typing")
         m=await message.reply_sticker("CAACAgQAAxkBAAEBB2ZiJjhMEWxwMEQZQ3P8MnO_1kqiKQACpDgAAjGNRgAB7LQc4Pny-AIeBA") 
         await asyncio.sleep(2)
         await m.delete()
         await message.reply_photo(
-            photo=START_IMAGE_URL if START_IMAGE_URL else random.choice(PICS),
-            caption=script.START_TXT.format(
-                (message.from_user.mention if 
-                message.from_user else 
-                message.chat.title), 
-                temp.U_NAME, 
-                temp.B_NAME,
-            ),
-            reply_markup=reply_markup
+            photo=random.choice(START_IMAGE_URL),
+            caption=script.START_TXT.format(message.from_user.mention, temp.U_NAME, temp.B_NAME),
+            reply_markup=reply_markup,
+            parse_mode='html'
         )
         return
 
