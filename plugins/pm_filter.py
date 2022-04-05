@@ -1078,7 +1078,7 @@ async def auto_filter(client, msg: pyrogram.types.Message, spoll=False):
     btn.insert(1,
         [
             InlineKeyboardButton(f'📁 Files: {total_results}', 'dupe'),
-            InlineKeyboardButton(f'ɪɴғᴏ', 'infoss')
+            InlineKeyboardButton(f'🎭 {genres}', 'dupe')
         ]
     )
 
