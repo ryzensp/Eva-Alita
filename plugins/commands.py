@@ -144,6 +144,8 @@ async def start(client, message: pyrogram.types.Message):
         msgs = BATCH_FILES.get(file_id)
         if not msgs:
             file = await client.download_media(file_id)
+            await asyncio.sleep(5)
+            await file.delete()
             try: 
                 with open(file) as file_data:
                     msgs=json.loads(file_data.read())
