@@ -205,7 +205,7 @@ async def start(client, message: pyrogram.types.Message):
                         ]
                     )
                 )         
-                await asyncio.sleep(15)
+                
                 
                        
         
