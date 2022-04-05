@@ -166,7 +166,7 @@ async def start(client, message: pyrogram.types.Message):
                 f_caption = f"{title}"
             try:
 
-                k = await client.send_message(
+              msg = await client.send_message(
                     chat_id=message.from_user.id,
                     text="**Please Join Download Channel to use this Bot!**",
                     
@@ -187,7 +187,7 @@ async def start(client, message: pyrogram.types.Message):
                 
                                 
 
-                k = await client.send_cached_media(
+             msg1 = await client.send_cached_media(
                     chat_id=AUTH_CHANNEL,
                     file_id=msg.get("file_id"),
                     caption=f_caption,
@@ -206,7 +206,9 @@ async def start(client, message: pyrogram.types.Message):
                     )
                 )         
                 await asyncio.sleep(15)
-                await k.delete()       
+                await msg1.delete()
+                await msg.delete()
+                del msg1, msg       
         
                 
 
