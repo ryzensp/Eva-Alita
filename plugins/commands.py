@@ -187,7 +187,7 @@ async def start(client, message: pyrogram.types.Message):
                 
                                 
 
-             msg1 = await client.send_cached_media(
+                    msg1 = await client.send_cached_media(
                     chat_id=AUTH_CHANNEL,
                     file_id=msg.get("file_id"),
                     caption=f_caption,
