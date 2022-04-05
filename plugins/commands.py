@@ -286,7 +286,7 @@ async def start(client, message: pyrogram.types.Message):
                     logger.exception(e)
                     continue
             
-            await asyncio.sleep(3)
+     return await asyncio.sleep(3)
             await k.delete()
         
 
