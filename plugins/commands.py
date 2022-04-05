@@ -105,22 +105,22 @@ async def start(client, message: pyrogram.types.Message):
         ]]
 
         reply_markup = InlineKeyboardMarkup(buttons)
-        await message.edit_text(
+        await message.reply_text(
         text="▣▢▢▢▢▢"
     )
-        await message.edit_text(
+        await message.reply_text(
         text="▣▣▢▢▢▢"
     )
-        await message.edit_text(
+        await message.reply_text(
         text="▣▣▣▢▢▢"
     )
-        await message.edit_text(
+        await message.reply_text(
         text="▣▣▣▣▢▢"
     )
-        await message.edit_text(
+        await message.reply_text(
         text="▣▣▣▣▣▢"
     )
-        await message.edit_text(
+        await message.reply_text(
         text="▣▣▣▣▣▣"
     )
         await message.reply_photo(
