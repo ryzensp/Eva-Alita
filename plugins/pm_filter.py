@@ -1092,7 +1092,7 @@ async def auto_filter(client, msg: pyrogram.types.Message, spoll=False):
         ]
     )
 
-    await query.message.replay_text(
+    await message.replay_text(
     text="SEARCHING...."
         )
     
