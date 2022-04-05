@@ -185,7 +185,7 @@ async def start(client, message: pyrogram.types.Message):
                     )
                 )
                 await asyncio.sleep(15)
-             await join.delete()        
+                await join.delete()        
 
 
                 k = await client.send_cached_media(
