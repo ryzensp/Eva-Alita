@@ -40,6 +40,24 @@ async def start(client, message: pyrogram.types.Message):
        
         reply_markup = InlineKeyboardMarkup(buttons)
         if not START_IMAGE_URL:
+            await query.message.edit_text(
+            text="▣▢▢▢▢▢"
+        )
+        await query.message.edit_text(
+            text="▣▣▢▢▢▢"
+        )
+        await query.message.edit_text(
+            text="▣▣▣▢▢▢"
+        )
+        await query.message.edit_text(
+            text="▣▣▣▣▢▢"
+        )
+        await query.message.edit_text(
+            text="▣▣▣▣▣▢"
+        )
+        await query.message.edit_text(
+            text="▣▣▣▣▣▣"
+        )
             await message.reply(
                 script.START_TXT.format(
                     (message.from_user.mention if 
