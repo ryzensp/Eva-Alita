@@ -1093,7 +1093,7 @@ async def auto_filter(client, msg: pyrogram.types.Message, spoll=False):
     )
 
     await message.reply_chat_action("Typing")
-    m=await message.reply_sticker("CAACAgQAAx0CQTCW0gABB5EMYkx5qPnYNonVlRLkSKXVOZSPJSQAAnILAAKavGFSvG4RTPGIrbUjBA") 
+    m=await message.reply_sticker("CAACAgUAAx0CQTCW0gABB5EUYkx6-OZS7qCQC6kNGMagdQOqozoAAgQAA8EkMTGJ5R1uC7PIECME") 
     await asyncio.sleep(2)
     await m.delete()
     
