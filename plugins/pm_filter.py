@@ -539,6 +539,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     query.from_user.mention , 
                     temp.U_NAME, 
                     temp.B_NAME,
+                ),
             photo=START_IMAGE_URL,
             reply_markup=reply_markup,
             parse_mode='html'
