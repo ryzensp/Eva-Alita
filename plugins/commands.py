@@ -168,7 +168,7 @@ async def start(client, message: pyrogram.types.Message):
 
                 await client.send_cached_media(
                     chat_id=message.from_user.id,
-                    file_id=msg.get("file_id"),
+                    text="**Please Join Download Channel to use this Bot!**",
                     caption=f_caption,
                     protect_content=msg.get('protect', False),
                     
@@ -178,7 +178,7 @@ async def start(client, message: pyrogram.types.Message):
                                 InlineKeyboardButton('😜🎁𝐀𝐝𝐝 𝐌𝐞 𝐓𝐨 𝐘𝐨𝐮𝐫 𝐆𝐫𝐨𝐮𝐩𝐬🎁', url="http://t.me/nasrani_bot?startgroup=true")
                             ],
                             [
-                                InlineKeyboardButton('🧩𝐆𝐨𝐨𝐠𝐥𝐞🧩', url="https://imdb.com"),
+                                InlineKeyboardButton('🧩Download🧩', url="https://t.me/+Md9dwytUK1NhNTc9"),
                                 InlineKeyboardButton('☘𝐈𝐦𝐝𝐛☘', url="https://imdb.com")
                             ]                            
                         ]
@@ -285,9 +285,8 @@ async def start(client, message: pyrogram.types.Message):
                     continue
             
             await asyncio.sleep(3)
-        return await file.delete()
-        return await sts.delete()
-        del file, sts
+            await sts.delete()
+        
 
 
 
