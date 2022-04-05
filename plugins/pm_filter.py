@@ -1011,8 +1011,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await query.answer("=> Ask with correct spelling\n=> Don't ask movies those are not released in OTT Some Of Theatre Quality Available🤧\n=> For better results:\n\t\t\t\t\t\t- MovieName year\n\t\t\t\t\t\t- Eg: Kuruthi 2021", True)
     elif query.data == 'infos':
         await query.answer("⚠︎ Information ⚠︎\n\nAfter 3 minutes this message will be automatically deleted\n\nIf you do not see the requested movie / series file, look at the next page\n\nⒸᴍᴏᴠɪᴇs ɢʀᴏᴜᴘ", True)
-    elif query.data == 'movies':
-        await query.answer("ᴍᴏᴠɪᴇ ʀᴇǫᴜᴇsᴛ ғᴏʀᴍᴀᴛ\n\nɢᴏ ᴛᴏ ɢᴏᴏɢʟᴇ ➠ ᴛʏᴘᴇ ᴍᴏᴠɪᴇ ɴᴀᴍᴇ ➠ ᴄᴏᴘʏ ᴄᴏʀʀᴇᴄᴛ ɴᴀᴍᴇ ➠ ᴘᴀsᴛᴇ ɪɴ ᴛʜɪs ɢʀᴏᴜᴘ\n\nᴇxᴀᴍᴘʟᴇ : ᴍᴀsᴛᴇʀ ᴏʀ ᴍᴀsᴛᴇʀ 2021\n\n🚯 ᴅᴏɴᴛ ᴜsᴇ ➠ ':(!,./)\n\nⒸᴍᴏᴠɪᴇs ɢʀᴏᴜᴘ", True)
+    elif query.data == 'infoss':
+        await query.answer("🎭 𝐆𝐞𝐧𝐫𝐞𝐬 : {genres}':(!,./)\n\nⒸᴍᴏᴠɪᴇs ɢʀᴏᴜᴘ", True)
     elif query.data == 'series':
         await query.answer("sᴇʀɪᴇs ʀᴇǫᴜᴇsᴛ ғᴏʀᴍᴀᴛ\n\nɢᴏ ᴛᴏ ɢᴏᴏɢʟᴇ ➠ ᴛʏᴘᴇ sᴇʀɪᴇs ɴᴀᴍᴇ ➠ ᴄᴏᴘʏ ᴄᴏʀʀᴇᴄᴛ ɴᴀᴍᴇ ➠ ᴘᴀsᴛᴇ ɪɴ ᴛʜɪs ɢʀᴏᴜᴘ\n\nᴇxᴀᴍᴘʟᴇ : Alive ᴏʀ Alive S01E01\n\n🚯 ᴅᴏɴᴛ ᴜsᴇ ➠ ':(!,./)\n\nⒸᴍᴏᴠɪᴇs ɢʀᴏᴜᴘ", True)
 
@@ -1078,7 +1078,7 @@ async def auto_filter(client, msg: pyrogram.types.Message, spoll=False):
     btn.insert(1,
         [
             InlineKeyboardButton(f'📁 Files: {total_results}', 'dupe'),
-            InlineKeyboardButton(f'‼️ countries: {countries}', 'dupe')
+            InlineKeyboardButton(f'ɪɴғᴏ', 'infoss')
         ]
     )
 
