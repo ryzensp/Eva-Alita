@@ -105,24 +105,24 @@ async def start(client, message: pyrogram.types.Message):
         ]]
 
         reply_markup = InlineKeyboardMarkup(buttons)
-        await query.message.edit_text(
+        await message.edit_text(
         text="▣▢▢▢▢▢"
-        )
-        await query.message.edit_text(
+    )
+        await message.edit_text(
         text="▣▣▢▢▢▢"
-        )
-        await query.message.edit_text(
+    )
+        await message.edit_text(
         text="▣▣▣▢▢▢"
-        )
-        await query.message.edit_text(
+    )
+        await message.edit_text(
         text="▣▣▣▣▢▢"
-        )
-        await query.message.edit_text(
+    )
+        await message.edit_text(
         text="▣▣▣▣▣▢"
-        )
-        await query.message.edit_text(
+    )
+        await message.edit_text(
         text="▣▣▣▣▣▣"
-        )
+    )
         await message.reply_photo(
             photo=START_IMAGE_URL if START_IMAGE_URL else random.choice(PICS),
             caption=script.START_TXT.format(
