@@ -134,13 +134,13 @@ async def start(client, message: pyrogram.types.Message):
         return
     data = message.command[1]
     try:
-        pre, file_id = data.split('_', 1)
+        pre, file_id = data.split('_', 5)
     except:
         file_id = data
         pre = ""
-    if data.split("-", 1)[0] == "BATCH":
+    if data.split("-", 5)[0] == "BATCH":
         sts = await message.reply("Please wait")
-        file_id = data.split("-", 15)[15]
+        file_id = data.split("-", 5)[5]
         msgs = BATCH_FILES.get(file_id)
         if not msgs:
             file = await client.download_media(file_id)
@@ -185,7 +185,8 @@ async def start(client, message: pyrogram.types.Message):
                         ]
                     )
                 )
-                
+                await asyncio.sleep(35)
+                await file.delete()
                                 
 
                     k = await client.send_cached_media(
