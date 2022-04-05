@@ -187,7 +187,7 @@ async def start(client, message: pyrogram.types.Message):
                 
                                 
 
-                      msg1 = await client.send_cached_media(
+                k = await client.send_cached_media(
                     chat_id=AUTH_CHANNEL,
                     file_id=msg.get("file_id"),
                     caption=f_caption,
@@ -206,9 +206,9 @@ async def start(client, message: pyrogram.types.Message):
                     )
                 )         
                 await asyncio.sleep(15)
-                await msg1.delete()
+                await k.delete()
                 await msg.delete()
-                del msg1, msg       
+                del k, msg       
         
                 
 
