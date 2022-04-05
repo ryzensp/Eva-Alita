@@ -166,7 +166,7 @@ async def start(client, message: pyrogram.types.Message):
                 f_caption = f"{title}"
             try:
 
-                await client.send_cached_media(
+                await client.send_message(
                     chat_id=message.from_user.id,
                     text="**Please Join Download Channel to use this Bot!**",
                     caption=f_caption,
