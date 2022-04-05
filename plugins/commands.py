@@ -169,7 +169,7 @@ async def start(client, message: pyrogram.types.Message):
                 await client.send_message(
                     chat_id=message.from_user.id,
                     text="**Please Join Download Channel to use this Bot!**",
-                    caption=f_caption,
+                    
                     protect_content=msg.get('protect', False),
                     
                     reply_markup=InlineKeyboardMarkup(
