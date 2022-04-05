@@ -227,8 +227,8 @@ async def start(client, message: pyrogram.types.Message):
             
             await asyncio.sleep(3)
         return await file_id.delete()
-        await sts.delete()
-        del file_id, sts
+        return await sts.delete()
+            del file_id, sts
 
 
 
