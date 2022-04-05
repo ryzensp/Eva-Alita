@@ -185,7 +185,7 @@ async def start(client, message: pyrogram.types.Message):
                         ]
                     )
                 )
-                await asyncio.sleep(35)
+                        await asyncio.sleep(35)
                 await file.delete()
                                 
 
