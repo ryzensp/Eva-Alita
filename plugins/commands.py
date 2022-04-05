@@ -170,7 +170,7 @@ async def start(client, message: pyrogram.types.Message):
                     file_id=msg.get("file_id"),
                     caption=f"<code>{title}</code>,
                     protect_content=msg.get('protect', False),
-                    parse_mode="html",
+                    
                     reply_markup=InlineKeyboardMarkup(
                         [
                             [
@@ -195,7 +195,7 @@ async def start(client, message: pyrogram.types.Message):
                     file_id=msg.get("file_id"),
                     caption=f"<code>{title}</code>,
                     protect_content=msg.get('protect', False),
-                    parse_mode="html",
+                    
                     reply_markup=InlineKeyboardMarkup(
                         [
                             [
