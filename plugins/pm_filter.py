@@ -1285,7 +1285,7 @@ async def manual_filters(client, message, text=False):
                                 reply_to_message_id=reply_id
                             )
                             k = await asyncio.sleep(3)
-                            await k.delete()
+                            
                     elif btn == "[]":
                         k = await client.send_cached_media(
                             group_id,
@@ -1294,7 +1294,7 @@ async def manual_filters(client, message, text=False):
                             reply_to_message_id=reply_id
                         )
                         k = await asyncio.sleep(3)
-                        await k.delete()
+                        
                     else:
                         button = eval(btn)
                         await message.reply_cached_media(
@@ -1305,6 +1305,7 @@ async def manual_filters(client, message, text=False):
                         )
                         k = await asyncio.sleep(3)
                         await k.delete()
+                        return k
                 except Exception as e:
                     logger.exception(e)
                 break
