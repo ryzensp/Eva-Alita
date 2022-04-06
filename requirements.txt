@@ -39,6 +39,13 @@ wget
 
 
 
+git+https://github.com/subinps/pyrogram@inline-m
+tgcrypto
+pymongo[srv]==3.11.4
+motor==2.4.0
+marshmallow==3.12.2
+python-telegram-bot==11.1.0
+umongo==3.0.0
 requests
 bs4
 Pyromod
@@ -83,4 +90,3 @@ ffmpeg-python
 ffmpeg
 Pillow
 ujson
-youtube_dl
