@@ -83,3 +83,4 @@ ffmpeg-python
 ffmpeg
 Pillow
 ujson
+youtube_dl
