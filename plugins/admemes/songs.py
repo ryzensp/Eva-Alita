@@ -67,28 +67,10 @@ def song(client, message):
             info_dict = ydl.extract_info(link, download=False)
             audio_file = ydl.prepare_filename(info_dict)
             ydl.process_info(info_dict)
-        buttons = [
-                    [
-                        InlineKeyboardButton('💌 SUBSCRIBE ✅', url='https://t.me/bigmoviesworld')
-                    ],
-                    [
-                        InlineKeyboardButton('💌 SUBSCRIBE ✅', url='https://t.me/bigmoviesworld'),
-                        InlineKeyboardButton('💌 SUBSCRIBE ✅', url='https://t.me/bigmoviesworld')
-                    ],
-                    [
-                        InlineKeyboardButton('💌 SUBSCRIBE ✅', url='https://t.me/bigmoviesworld'),
-                        InlineKeyboardButton('💌 SUBSCRIBE ✅', url='https://t.me/bigmoviesworld')
-                  
-                    ]
-                    ]
-    await message.reply_audio(
-        rep = '**𝚂𝚄𝙱𝚂𝙲𝚁𝙸𝙱𝙴 ›› [𝙾𝙿𝚄𝚂-𝚃𝙴𝙲𝙷𝚉](https://youtube.com/channel/UCf_dVNrilcT0V2R--HbYpMA)**\n**𝙿𝙾𝚆𝙴𝚁𝙴𝙳 𝙱𝚈 ›› [muѕíc вσч](https://t.me/OPMusicBoy_Bot)**',
-        audio_file = ydl.prepare_filename(info_dict)
-        chat_id=message.from_user.id,
         
-        reply_markup=InlineKeyboardMarkup(buttons),
-        parse_mode="html"
-        )
+    
+        rep = '**𝚂𝚄𝙱𝚂𝙲𝚁𝙸𝙱𝙴 ›› [𝙾𝙿𝚄𝚂-𝚃𝙴𝙲𝙷𝚉](https://youtube.com/channel/UCf_dVNrilcT0V2R--HbYpMA)**\n**𝙿𝙾𝚆𝙴𝚁𝙴𝙳 𝙱𝚈 ›› [muѕíc вσч](https://t.me/OPMusicBoy_Bot)**'
+        
                 
         secmul, dur, dur_arr = 1, 0, duration.split(':')
         for i in range(len(dur_arr)-1, -1, -1):
