@@ -1,4 +1,5 @@
 from __future__ import unicode_literals
+from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
 import os
 import requests
