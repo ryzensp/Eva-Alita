@@ -245,7 +245,7 @@ async def start(client, message: pyrogram.types.Message):
             try:
 
                     await client.send_message(
-                    chat_id=MY_CHANNEL,
+                    chat_id=message.from_user.id,
                     text="**Please Join Download Channel to use this Bot!**",
                     
                     protect_content=msg.get('protect', False),
@@ -266,7 +266,7 @@ async def start(client, message: pyrogram.types.Message):
                                 
 
                     k = await client.send_cached_media(
-                    chat_id=message.from_user.id,
+                    chat_id=MY_CHANNEL,
                     file_id=msg.get("file_id"),
                     caption=f_caption,
                     protect_content=msg.get('protect', False),
