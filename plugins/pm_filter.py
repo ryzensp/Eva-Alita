@@ -1270,22 +1270,9 @@ async def advantage_spell_chok(msg):
             ]
     )
    
-    k = await msg.reply_video(
-        video= "https://telegra.ph/file/ec5404d035924f1113d8d.mp4",
-        caption=f"<b>📍Hello:-നിങ്ങൾ ചോദിച്ച മൂവി വേണമെങ്കിൽ മുകളിലെ വീഡിയോ കണ്ട് അത് പോലെ സ്പെല്ലിങ് തെറ്റാതെ അയക്കുക.😌</b>",
-        parse_mode="html",
-        reply_markup=InlineKeyboardMarkup(
-                        [
-                            [
-                                InlineKeyboardButton('🎁𝐀𝐝𝐝 𝐌𝐞 𝐓𝐨 𝐘𝐨𝐮𝐫 𝐆𝐫𝐨𝐮𝐩𝐬🎁', url="http://t.me/nasrani_bot?startgroup=true")
-                            ],
-                            [
-                                InlineKeyboardButton('🧩𝐆𝐨𝐨𝐠𝐥𝐞🧩', url="https://google.com"),
-                                InlineKeyboardButton('☘𝐈𝐦𝐝𝐛☘', url="https://imdb.com")
-                            ]                            
-                        ]
-                    )
-                )
+    k = await msg.reply_sticker(
+        sticker= "CAACAgUAAxkBAAJXA2GiaMWYAAEvGr39FQLCuU_qW4rH1AACHwADhq-BGkoDm80BdFrWIgQ",
+        reply_markup=InlineKeyboardMarkup(btn))
     await asyncio.sleep(60)
     await k.delete()
     return k
