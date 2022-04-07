@@ -1283,7 +1283,7 @@ async def advantage_spell_chok(msg):
             ]
             
         ]
-        sticker= "CAACAgUAAxkBAAJXA2GiaMWYAAEvGr39FQLCuU_qW4rH1AACHwADhq-BGkoDm80BdFrWIgQ",
+        photo= "START_IMAGE_URL",
         reply_markup=InlineKeyboardMarkup(btn))
     await asyncio.sleep(60)
     await k.delete()
