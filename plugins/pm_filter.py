@@ -1272,6 +1272,12 @@ async def advantage_spell_chok(msg):
    
     k = await msg.reply_sticker(
         sticker= "CAACAgUAAxkBAAJXA2GiaMWYAAEvGr39FQLCuU_qW4rH1AACHwADhq-BGkoDm80BdFrWIgQ",
+    btn.append(
+            [
+                InlineKeyboardButton("🔐𝐂𝐥𝐨𝐬𝐞🔐", url="https://imdb.com"),
+                InlineKeyboardButton("song", url="https://imdb.com")       
+            ],
+        )
         reply_markup=InlineKeyboardMarkup(btn))
     await asyncio.sleep(60)
     await k.delete()
