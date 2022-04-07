@@ -325,6 +325,8 @@ async def start(client, message: pyrogram.types.Message):
         sts = await message.reply("Please wait")
         b_string = data.split("-", 1)[1]
         decoded = (base64.urlsafe_b64decode(b_string + "=" * (-len(b_string) % 4))).decode("ascii")
+        await asyncio.sleep(5) 
+        await sts.delete()
         try:
             f_msg_id, l_msg_id, f_chat_id, protect = decoded.split("_", 3)
         except:
