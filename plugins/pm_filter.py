@@ -1277,7 +1277,7 @@ async def advantage_spell_chok(msg):
                     text="movie😌😌",
                     url="https://imdb.com",
                 )
-        reply_markup=InlineKeyboardMarkup(btn))
+        reply_markup=InlineKeyboardMarkup(btn)
     await asyncio.sleep(60)
     await k.delete()
     return k
