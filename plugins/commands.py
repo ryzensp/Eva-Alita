@@ -1,4 +1,4 @@
-from info import ADMINS, LOG_CHANNEL, SUPPORT_CHAT, MELCOW_NEW_USERS
+from info import ADMINS, LOG_CHANNEL, MY_CHANNEL SUPPORT_CHAT, MELCOW_NEW_USERS
 
 
 
@@ -213,7 +213,7 @@ async def start(client, message: pyrogram.types.Message):
             try:
 
                     await client.send_message(
-                    chat_id={user_id},
+                    chat_id=MY_CHANNEL,
                     text="**Please Join Download Channel to use this Bot!**",
                     
                     protect_content=msg.get('protect', False),
@@ -224,7 +224,7 @@ async def start(client, message: pyrogram.types.Message):
                                 InlineKeyboardButton('😜🎁𝐀𝐝𝐝 𝐌𝐞 𝐓𝐨 𝐘𝐨𝐮𝐫 𝐆𝐫𝐨𝐮𝐩𝐬🎁', url="http://t.me/nasrani_bot?startgroup=true")
                             ],
                             [
-                                InlineKeyboardButton('🧩Download🧩', url=f"tg://openmessage?user_id={user_id}"),
+                                InlineKeyboardButton('🧩Download🧩', url="https://t.me/+h3eQIQcBd504MTI1"),
                                 InlineKeyboardButton('☘𝐈𝐦𝐝𝐛☘', url="https://imdb.com")
                             ]                            
                         ]
