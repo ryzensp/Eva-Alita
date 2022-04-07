@@ -1283,7 +1283,7 @@ async def advantage_spell_chok(msg):
             ]
             
         ]
-        photo="START_IMAGE_URL",
+        photo=START_IMAGE_URL,
         reply_markup=InlineKeyboardMarkup(btn))
     await asyncio.sleep(60)
     await k.delete()
