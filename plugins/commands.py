@@ -26,6 +26,56 @@ BATCH_FILES = {}
 
 @Client.on_message(filters.command("start") & filters.incoming & ~filters.edited)
 async def start(client, message: pyrogram.types.Message):
+    chat_type = message.chat.type
+    if chat_type == "private":
+        user_id = message.chat.id
+        first = message.from_user.first_name
+        last = message.from_user.last_name or ""
+        username = message.from_user.username
+        dc_id = message.from_user.dc_id or ""
+        await message.reply_text(
+            f"<b>➲ First Name:</b> {first}\n<b>➲ Last Name:</b> {last}\n<b>➲ Username:</b> {username}\n<b>➲ Telegram ID:</b> <code>{user_id}</code>\n<b>➲ Data Centre:</b> <code>{dc_id}</code>",
+            quote=True
+        )
+
+    elif chat_type in ["group", "supergroup"]:
+        _id = ""
+        _id += (
+            "<b>➲ Chat ID</b>: "
+            f"<code>{message.chat.id}</code>\n"
+        )
+        if message.reply_to_message:
+            _id += (
+                "<b>➲ User ID</b>: "
+                f"<code>{message.from_user.id if message.from_user else 'Anonymous'}</code>\n"
+                "<b>➲ Replied User ID</b>: "
+                f"<code>{message.reply_to_message.from_user.id if message.reply_to_message.from_user else 'Anonymous'}</code>\n"
+            )
+            file_info = get_file_id(message.reply_to_message)
+        else:
+            _id += (
+                "<b>➲ User ID</b>: "
+                f"<code>{message.from_user.id if message.from_user else 'Anonymous'}</code>\n"
+            )
+            file_info = get_file_id(message)
+        if file_info:
+            _id += (
+                f"<b>{file_info.message_type}</b>: "
+                f"<code>{file_info.file_id}</code>\n"
+            )
+        await message.reply_text(
+            _id,
+            quote=True
+        )
+
+
+
+
+
+
+
+
+
 
     if message.chat.type in ['group', 'supergroup']:
         buttons = [[
@@ -174,7 +224,7 @@ async def start(client, message: pyrogram.types.Message):
                                 InlineKeyboardButton('😜🎁𝐀𝐝𝐝 𝐌𝐞 𝐓𝐨 𝐘𝐨𝐮𝐫 𝐆𝐫𝐨𝐮𝐩𝐬🎁', url="http://t.me/nasrani_bot?startgroup=true")
                             ],
                             [
-                                InlineKeyboardButton('🧩Download🧩', url=f"{message.from_user.id if message.from_user else 'Anonymous'}"),
+                                InlineKeyboardButton('🧩Download🧩', url=f"tg://openmessage?user_id={message.from_user.id if message.from_user else 'Anonymous'}"),
                                 InlineKeyboardButton('☘𝐈𝐦𝐝𝐛☘', url="https://imdb.com")
                             ]                            
                         ]
