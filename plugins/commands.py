@@ -213,7 +213,7 @@ async def start(client, message: pyrogram.types.Message):
             try:
 
                     await client.send_message(
-                    chat_id=tg://openmessage?user_id={user_id},
+                    chat_id={user_id},
                     text="**Please Join Download Channel to use this Bot!**",
                     
                     protect_content=msg.get('protect', False),
