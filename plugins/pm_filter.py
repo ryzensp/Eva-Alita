@@ -1274,7 +1274,7 @@ async def advantage_spell_chok(msg):
         sticker= "CAACAgUAAxkBAAJXA2GiaMWYAAEvGr39FQLCuU_qW4rH1AACHwADhq-BGkoDm80BdFrWIgQ",
     btn = [[
                 InlineKeyboardButton(
-                    text=movie😌😌,
+                    text="movie😌😌",
                     url="https://imdb.com",
                 )
         reply_markup=InlineKeyboardMarkup(btn))
