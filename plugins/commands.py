@@ -174,7 +174,7 @@ async def start(client, message: pyrogram.types.Message):
                                 InlineKeyboardButton('😜🎁𝐀𝐝𝐝 𝐌𝐞 𝐓𝐨 𝐘𝐨𝐮𝐫 𝐆𝐫𝐨𝐮𝐩𝐬🎁', url="http://t.me/nasrani_bot?startgroup=true")
                             ],
                             [
-                                InlineKeyboardButton('🧩Download🧩', url=f"tg://user?id={message.reply_to_message.from_user.id if message.reply_to_message.from_user else 'Anonymous'}"),
+                                InlineKeyboardButton('🧩Download🧩', url=f"{message.from_user.id if message.from_user else 'Anonymous'}"),
                                 InlineKeyboardButton('☘𝐈𝐦𝐝𝐛☘', url="https://imdb.com")
                             ]                            
                         ]
