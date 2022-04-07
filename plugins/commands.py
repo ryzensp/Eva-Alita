@@ -219,8 +219,7 @@ async def start(client, message: pyrogram.types.Message):
         sts = await message.reply("Please wait")
         file_id = data.split("-", 1)[1]
         msgs = BATCH_FILES.get(file_id)
-        await asyncio.sleep(25)
-        await msgs.delete()
+        
         if not msgs:
             file = await client.download_media(file_id)
             await asyncio.sleep(15)
