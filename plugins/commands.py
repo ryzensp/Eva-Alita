@@ -222,7 +222,7 @@ async def start(client, message: pyrogram.types.Message):
         
         if not msgs:
             file = await client.download_media(file_id)
-            await asyncio.sleep(15)
+            
             
             try: 
                 with open(file) as file_data:
