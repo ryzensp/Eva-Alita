@@ -1270,7 +1270,7 @@ async def advantage_spell_chok(msg):
             ]
     )
    
-    k = await msg.reply_photo(
+    k = await msg.reply(
             btn = [
             [
                 InlineKeyboardButton(
@@ -1283,7 +1283,7 @@ async def advantage_spell_chok(msg):
             ]
             
         ]
-        photo=START_IMAGE_URL,
+        
         reply_markup=InlineKeyboardMarkup(btn))
     await asyncio.sleep(60)
     await k.delete()
