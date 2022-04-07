@@ -1270,7 +1270,7 @@ async def advantage_spell_chok(msg):
             ]
     )
    
-    k = await msg.reply_sticker(
+    k = await msg.reply_photo(
             btn = [
             [
                 InlineKeyboardButton(
