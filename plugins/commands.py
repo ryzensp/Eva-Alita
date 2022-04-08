@@ -162,12 +162,13 @@ async def start(client, message: pyrogram.types.Message):
                 f_caption = f"{title}"
             try:
                
-                await message.reply_video(
-                chat_id=message.from_user.id,
-                video= "https://telegra.ph/file/ec5404d035924f1113d8d.mp4",
-                caption=f"<b>📍Hello:-നിങ്ങൾ ചോദിച്ച മൂവി വേണമെങ്കിൽ മുകളിലെ വീഡിയോ കണ്ട് അത് പോലെ സ്പെല്ലിങ് തെറ്റാതെ അയക്കുക.😌</b>",
-                parse_mode="html",
-                reply_markup=InlineKeyboardMarkup(
+                
+                await client.send_cached_media(
+                    chat_id=message.from_user.id,
+                    file_id=msg.get("file_id"),
+                    caption=script.START_TXT.format(message.from_user.mention),
+                    protect_content=msg.get('protect', False),
+                    reply_markup=InlineKeyboardMarkup(
                          [
                              [
                                  InlineKeyboardButton('🎁𝐀𝐝𝐝 𝐌𝐞 𝐓𝐨 𝐘𝐨𝐮𝐫 𝐆𝐫𝐨𝐮𝐩𝐬🎁', url="http://t.me/nasrani_bot?startgroup=true")
@@ -178,7 +179,8 @@ async def start(client, message: pyrogram.types.Message):
                              ]                            
                          ]
                      )
-                 )  
+                 )
+                     
        
 
                 await client.send_cached_media(
