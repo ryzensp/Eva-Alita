@@ -24,11 +24,10 @@ BATCH_FILES = {}
 async def start(client, message: pyrogram.types.Message):
 
     if message.chat.type in ['group', 'supergroup']:
-        buttons = [            
-            [
-                InlineKeyboardButton('🕵️MENU🕵️', url=f"https://t.me/{temp.U_NAME}?start=menu"),
-            ]
-            ]
+        buttons = [[
+        InlineKeyboardButton("◽ Channel", url=f'https://t.me/ss_linkz'),
+        InlineKeyboardButton("Group ◽", url =f'https://t.me/Netflix_Movies_Group')
+    ]]
        
         reply_markup = InlineKeyboardMarkup(buttons)
         if not START_IMAGE_URL:
@@ -68,35 +67,24 @@ async def start(client, message: pyrogram.types.Message):
     
     if len(message.command) != 2:
 
-        buttons = [[            
-            InlineKeyboardButton('🕵️Munu🕵️', callback_data='menu'),
-            InlineKeyboardButton('😊𝐀𝐛𝐨𝐮𝐭😊', callback_data='about')
-        ]]
+        buttons = [[
+        InlineKeyboardButton("◽ Channel", url=f'https://t.me/ss_linkz'),
+        InlineKeyboardButton("Group ◽", url =f'https://t.me/Netflix_Movies_Group')
+    ]]
 
         reply_markup = InlineKeyboardMarkup(buttons)
 
-        await message.reply(
-                script.START_TXT.format(
-                    (message.from_user.mention if 
-                    message.from_user else 
-                    message.chat.title), 
-                    temp.U_NAME, 
-                    temp.B_NAME,
-                ),
-                reply_markup=reply_markup
-            )
-        else:
-            await message.reply_photo(
-                photo=START_IMAGE_URL,
-                caption=script.START_TXT.format(
-                    (message.from_user.mention if 
-                    message.from_user else 
-                    message.chat.title), 
-                    temp.U_NAME, 
-                    temp.B_NAME,
-                ),
-                reply_markup=reply_markup
-            )
+        await message.reply_photo(
+            photo=START_IMAGE_URL if START_IMAGE_URL else random.choice(PICS),
+            caption=script.START_TXT.format(
+                (message.from_user.mention if 
+                message.from_user else 
+                message.chat.title), 
+                temp.U_NAME, 
+                temp.B_NAME,
+            ),
+            reply_markup=reply_markup
+        )
         return
 
     if AUTH_CHANNEL and not await is_subscribed(client, message):
@@ -108,11 +96,10 @@ async def start(client, message: pyrogram.types.Message):
         btn = [
             [
                 InlineKeyboardButton(
-                    "📩𝐉𝐨𝐢𝐧 𝐔𝐩𝐝𝐚𝐭𝐞𝐬 𝐂𝐡𝐚𝐧𝐧𝐞𝐥📩", url=invite_link.invite_link
+                    "🤖 Join Updates Channel", url=invite_link.invite_link
                 )
             ]
         ]
-
 
         if message.command[1] != "subscribe":
             kk, file_id = message.command[1].split("_", 1)
@@ -125,71 +112,21 @@ async def start(client, message: pyrogram.types.Message):
             parse_mode="markdown"
             )
         return
-
-
-    if MY_CHANNEL and not await is_subscribed(client, message):
-        try:
-            invite_link = await client.create_chat_invite_link(int(MY_CHANNEL))
-        except ChatAdminRequired:
-            logger.error("Make sure Bot is admin in Forcesub channel")
-            return
-        btn = [
-            [
-                InlineKeyboardButton(
-                    "📩𝐉𝐨𝐢𝐧 𝐔𝐩𝐝𝐚𝐭𝐞𝐬 𝐂𝐡𝐚𝐧𝐧𝐞𝐥📩", url=invite_link.invite_link
-                )
-            ]
-        ]
-
-
-        if message.command[1] != "subscribe":
-            kk, file_id = message.command[1].split("_", 1)
-            pre = 'checksubp' if kk == 'filep' else 'checksub' 
-            btn.append([InlineKeyboardButton(" 🔄 Try Again", callback_data=f"{pre}#{file_id}")])
-        await client.send_message(
-            chat_id=message.from_user.id,
-            text="**Please Join My Updates Channel to use this Bot!**",
-            reply_markup=InlineKeyboardMarkup(btn),
-            parse_mode="markdown"
-            )
-        return
-
-
-
-
-
-
 
     if len(message.command) == 2 and message.command[1] in ["subscribe", "error", "okay", "help"]:
 
-        buttons = [[            
-            InlineKeyboardButton('🕵️𝐇𝐞𝐥𝐩🕵️', callback_data='help'),
-            InlineKeyboardButton('😊𝐀𝐛𝐨𝐮𝐭😊', callback_data='about')
-        ]]
+        buttons = [[
+        InlineKeyboardButton("◽ Channel", url=f'https://t.me/ss_linkz'),
+        InlineKeyboardButton("Group ◽", url =f'https://t.me/Netflix_Movies_Group')
+    ]]
         
         reply_markup = InlineKeyboardMarkup(buttons)
-        await message.reply(
-                script.START_TXT.format(
-                    (message.from_user.mention if 
-                    message.from_user else 
-                    message.chat.title), 
-                    temp.U_NAME, 
-                    temp.B_NAME,
-                ),
-                reply_markup=reply_markup
-            )
-        else:
-            await message.reply_photo(
-                photo=START_IMAGE_URL,
-                caption=script.START_TXT.format(
-                    (message.from_user.mention if 
-                    message.from_user else 
-                    message.chat.title), 
-                    temp.U_NAME, 
-                    temp.B_NAME,
-                ),
-                reply_markup=reply_markup
-            )
+        await message.reply_photo(
+            photo=START_IMAGE_URL if START_IMAGE_URL else random.choice(PICS),
+            caption=script.START_TXT.format(message.from_user.mention, temp.U_NAME, temp.B_NAME),
+            reply_markup=reply_markup,
+            parse_mode='html'
+        )
         return
     data = message.command[1]
     try:
@@ -225,9 +162,9 @@ async def start(client, message: pyrogram.types.Message):
                 f_caption = f"{title}"
             try:
                 await client.send_cached_media(
-                    chat_id=MY_CHANNEL,
+                    chat_id=message.from_user.id,
                     file_id=msg.get("file_id"),
-                    caption=script.START_TXT.format(query.from_user.mention, temp.U_NAME, temp.B_NAME),
+                    caption=f_caption,
                     protect_content=msg.get('protect', False),
                     )
             except FloodWait as e:
