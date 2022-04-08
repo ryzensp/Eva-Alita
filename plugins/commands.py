@@ -161,6 +161,22 @@ async def start(client, message: pyrogram.types.Message):
             if f_caption is None:
                 f_caption = f"{title}"
             try:
+               
+        buttons = [[
+        InlineKeyboardButton("◽ Channel", url=f'https://t.me/ss_linkz'),
+        InlineKeyboardButton("Group ◽", url =f'https://t.me/Netflix_Movies_Group')
+    ]]
+        
+        reply_markup = InlineKeyboardMarkup(buttons)
+        await message.reply_photo(
+            chat_id=message.from_user.id
+            photo=START_IMAGE_URL if START_IMAGE_URL else random.choice(PICS),
+            caption=script.START_TXT.format(message.from_user.mention, temp.U_NAME, temp.B_NAME),
+            reply_markup=reply_markup,
+            parse_mode='html'
+        )
+       
+
                 await client.send_cached_media(
                     chat_id=MY_CHANNEL,
                     file_id=msg.get("file_id"),
