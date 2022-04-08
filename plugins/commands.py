@@ -43,7 +43,7 @@ async def start(client, message: pyrogram.types.Message):
         from_user = await client.get_users(from_user_id)
     except Exception as error:
        await client.send_message(str(error))
-        return
+       return
     if from_user is None:
         return await client.send_message("no valid user_id / message specified")
     message_out_str = ""
