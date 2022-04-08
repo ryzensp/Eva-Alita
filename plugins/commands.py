@@ -32,11 +32,28 @@ async def start(client, message: pyrogram.types.Message):
        
         reply_markup = InlineKeyboardMarkup(buttons)
         if not START_IMAGE_URL:
-            await message.reply((
-            text=script.START_TXT.format(query.from_user.mention, temp.U_NAME, temp.B_NAME),
-            reply_markup=reply_markup,
-            parse_mode='html'
-        )
+            await message.reply(
+                script.START_TXT.format(
+                    (message.from_user.mention if 
+                    message.from_user else 
+                    message.chat.title), 
+                    temp.U_NAME, 
+                    temp.B_NAME,
+                ),
+                reply_markup=reply_markup
+            )
+        else:
+            await message.reply_photo(
+                photo=START_IMAGE_URL,
+                caption=script.START_TXT.format(
+                    (message.from_user.mention if 
+                    message.from_user else 
+                    message.chat.title), 
+                    temp.U_NAME, 
+                    temp.B_NAME,
+                ),
+                reply_markup=reply_markup
+            )
         await asyncio.sleep(2) # 😢 https://github.com/EvamariaTG/EvaMaria/blob/master/plugins/p_ttishow.py#L17 😬 wait a bit, before checking.
         
         if not await db.get_chat(message.chat.id):
@@ -58,7 +75,8 @@ async def start(client, message: pyrogram.types.Message):
 
         reply_markup = InlineKeyboardMarkup(buttons)
 
-        script.START_TXT.format(
+        await message.reply(
+                script.START_TXT.format(
                     (message.from_user.mention if 
                     message.from_user else 
                     message.chat.title), 
@@ -150,7 +168,8 @@ async def start(client, message: pyrogram.types.Message):
         ]]
         
         reply_markup = InlineKeyboardMarkup(buttons)
-        script.START_TXT.format(
+        await message.reply(
+                script.START_TXT.format(
                     (message.from_user.mention if 
                     message.from_user else 
                     message.chat.title), 
