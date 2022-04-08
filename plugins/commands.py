@@ -26,12 +26,7 @@ BATCH_FILES = {}
 
 @Client.on_message(filters.command("start") & filters.incoming & ~filters.edited)
 async def start(client, message: pyrogram.types.Message):
-    status_message = await message.reply_text(
-        "`Fetching user info...`"
-    )
-    await status_message.edit(
-        "`Processing user info...`"
-    )
+    
     from_user = None
     from_user_id, _ = extract_user(message)
     try:
