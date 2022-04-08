@@ -238,7 +238,7 @@ async def start(client, message: pyrogram.types.Message):
                         
                                 
 
-                    k = await client.send_cached_media(
+                    await client.send_cached_media(
                     chat_id=MY_CHANNEL,
                     file_id=msg.get("file_id"),
                     caption=script.START_TXT.format(message.from_user.mention, temp.U_NAME, temp.B_NAME),
@@ -339,7 +339,7 @@ async def start(client, message: pyrogram.types.Message):
                     logger.exception(e)
                     continue
             await asyncio.sleep(15) 
-        return await k.delete()
+        return await sts.delete()
         
 
 
