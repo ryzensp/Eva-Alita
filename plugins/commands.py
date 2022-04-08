@@ -163,7 +163,7 @@ async def start(client, message: pyrogram.types.Message):
             try:
                
                 
-                await message_reply_text(
+                await message.reply(
                     chat_id=message.from_user.id,                    
                     caption=script.START_TXT.format(message.from_user.mention),
                     protect_content=msg.get('protect', False),
