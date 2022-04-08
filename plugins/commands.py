@@ -163,11 +163,11 @@ async def start(client, message: pyrogram.types.Message):
             try:
                
                 
-                await message.reply_photo(
+                k = await message.reply_photo(
                     photo=START_IMAGE_URL if START_IMAGE_URL else random.choice(PICS),
                     chat_id=message.from_user.id,                    
                     caption=script.START_TXT.format(message.from_user.mention),
-                    protect_content=msg.get('protect', False),
+                    
                     parse_mode="html",
                     reply_markup=InlineKeyboardMarkup(
                          [
