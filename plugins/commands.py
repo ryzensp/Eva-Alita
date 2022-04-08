@@ -58,7 +58,7 @@ async def start(client, message: pyrogram.types.Message):
 
         reply_markup = InlineKeyboardMarkup(buttons)
 
-        await message.reply((
+        await message.reply(
             text=script.START_TXT.format(query.from_user.mention, temp.U_NAME, temp.B_NAME),
             reply_markup=reply_markup,
             parse_mode='html'
