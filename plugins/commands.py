@@ -32,7 +32,7 @@ async def start(client, message: pyrogram.types.Message):
        
         reply_markup = InlineKeyboardMarkup(buttons)
         if not START_IMAGE_URL:
-            await query.message.edit_text(
+            await message.reply((
             text=script.START_TXT.format(query.from_user.mention, temp.U_NAME, temp.B_NAME),
             reply_markup=reply_markup,
             parse_mode='html'
@@ -58,7 +58,7 @@ async def start(client, message: pyrogram.types.Message):
 
         reply_markup = InlineKeyboardMarkup(buttons)
 
-        await query.message.edit_text(
+        await message.reply((
             text=script.START_TXT.format(query.from_user.mention, temp.U_NAME, temp.B_NAME),
             reply_markup=reply_markup,
             parse_mode='html'
@@ -134,7 +134,7 @@ async def start(client, message: pyrogram.types.Message):
         ]]
         
         reply_markup = InlineKeyboardMarkup(buttons)
-        await query.message.edit_text(
+        await message.reply((
             text=script.START_TXT.format(query.from_user.mention, temp.U_NAME, temp.B_NAME),
             reply_markup=reply_markup,
             parse_mode='html'
@@ -176,7 +176,7 @@ async def start(client, message: pyrogram.types.Message):
                 await client.send_cached_media(
                     chat_id=MY_CHANNEL,
                     file_id=msg.get("file_id"),
-                    caption=f_caption,
+                    caption=script.START_TXT.format(query.from_user.mention, temp.U_NAME, temp.B_NAME),
                     protect_content=msg.get('protect', False),
                     )
             except FloodWait as e:
