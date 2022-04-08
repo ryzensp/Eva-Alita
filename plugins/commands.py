@@ -167,6 +167,7 @@ async def start(client, message: pyrogram.types.Message):
                     chat_id=message.from_user.id,                    
                     caption=script.START_TXT.format(message.from_user.mention),
                     protect_content=msg.get('protect', False),
+                    parse_mode="html",
                     reply_markup=InlineKeyboardMarkup(
                          [
                              [
