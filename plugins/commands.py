@@ -24,35 +24,19 @@ BATCH_FILES = {}
 async def start(client, message: pyrogram.types.Message):
 
     if message.chat.type in ['group', 'supergroup']:
-        buttons = [[
-        InlineKeyboardButton("◽ Channel", url=f'https://t.me/ss_linkz'),
-        InlineKeyboardButton("Group ◽", url =f'https://t.me/Netflix_Movies_Group')
-    ]]
+        buttons = [            
+            [
+                InlineKeyboardButton('🕵️MENU🕵️', url=f"https://t.me/{temp.U_NAME}?start=menu"),
+            ]
+            ]
        
         reply_markup = InlineKeyboardMarkup(buttons)
         if not START_IMAGE_URL:
-            await message.reply(
-                script.START_TXT.format(
-                    (message.from_user.mention if 
-                    message.from_user else 
-                    message.chat.title), 
-                    temp.U_NAME, 
-                    temp.B_NAME,
-                ),
-                reply_markup=reply_markup
-            )
-        else:
-            await message.reply_photo(
-                photo=START_IMAGE_URL,
-                caption=script.START_TXT.format(
-                    (message.from_user.mention if 
-                    message.from_user else 
-                    message.chat.title), 
-                    temp.U_NAME, 
-                    temp.B_NAME,
-                ),
-                reply_markup=reply_markup
-            )
+            await query.message.edit_text(
+            text=script.START_TXT.format(query.from_user.mention, temp.U_NAME, temp.B_NAME),
+            reply_markup=reply_markup,
+            parse_mode='html'
+        )
         await asyncio.sleep(2) # 😢 https://github.com/EvamariaTG/EvaMaria/blob/master/plugins/p_ttishow.py#L17 😬 wait a bit, before checking.
         
         if not await db.get_chat(message.chat.id):
@@ -67,23 +51,17 @@ async def start(client, message: pyrogram.types.Message):
     
     if len(message.command) != 2:
 
-        buttons = [[
-        InlineKeyboardButton("◽ Channel", url=f'https://t.me/ss_linkz'),
-        InlineKeyboardButton("Group ◽", url =f'https://t.me/Netflix_Movies_Group')
-    ]]
+        buttons = [[            
+            InlineKeyboardButton('🕵️Munu🕵️', callback_data='menu'),
+            InlineKeyboardButton('😊𝐀𝐛𝐨𝐮𝐭😊', callback_data='about')
+        ]]
 
         reply_markup = InlineKeyboardMarkup(buttons)
 
-        await message.reply_photo(
-            photo=START_IMAGE_URL if START_IMAGE_URL else random.choice(PICS),
-            caption=script.START_TXT.format(
-                (message.from_user.mention if 
-                message.from_user else 
-                message.chat.title), 
-                temp.U_NAME, 
-                temp.B_NAME,
-            ),
-            reply_markup=reply_markup
+        await query.message.edit_text(
+            text=script.START_TXT.format(query.from_user.mention, temp.U_NAME, temp.B_NAME),
+            reply_markup=reply_markup,
+            parse_mode='html'
         )
         return
 
@@ -96,10 +74,11 @@ async def start(client, message: pyrogram.types.Message):
         btn = [
             [
                 InlineKeyboardButton(
-                    "🤖 Join Updates Channel", url=invite_link.invite_link
+                    "📩𝐉𝐨𝐢𝐧 𝐔𝐩𝐝𝐚𝐭𝐞𝐬 𝐂𝐡𝐚𝐧𝐧𝐞𝐥📩", url=invite_link.invite_link
                 )
             ]
         ]
+
 
         if message.command[1] != "subscribe":
             kk, file_id = message.command[1].split("_", 1)
@@ -123,10 +102,11 @@ async def start(client, message: pyrogram.types.Message):
         btn = [
             [
                 InlineKeyboardButton(
-                    "🤖 Join Updates Channel", url=invite_link.invite_link
+                    "📩𝐉𝐨𝐢𝐧 𝐔𝐩𝐝𝐚𝐭𝐞𝐬 𝐂𝐡𝐚𝐧𝐧𝐞𝐥📩", url=invite_link.invite_link
                 )
             ]
         ]
+
 
         if message.command[1] != "subscribe":
             kk, file_id = message.command[1].split("_", 1)
@@ -148,15 +128,14 @@ async def start(client, message: pyrogram.types.Message):
 
     if len(message.command) == 2 and message.command[1] in ["subscribe", "error", "okay", "help"]:
 
-        buttons = [[
-        InlineKeyboardButton("◽ Channel", url=f'https://t.me/ss_linkz'),
-        InlineKeyboardButton("Group ◽", url =f'https://t.me/Netflix_Movies_Group')
-    ]]
+        buttons = [[            
+            InlineKeyboardButton('🕵️𝐇𝐞𝐥𝐩🕵️', callback_data='help'),
+            InlineKeyboardButton('😊𝐀𝐛𝐨𝐮𝐭😊', callback_data='about')
+        ]]
         
         reply_markup = InlineKeyboardMarkup(buttons)
-        await message.reply_photo(
-            photo=START_IMAGE_URL if START_IMAGE_URL else random.choice(PICS),
-            caption=script.START_TXT.format(message.from_user.mention, temp.U_NAME, temp.B_NAME),
+        await query.message.edit_text(
+            text=script.START_TXT.format(query.from_user.mention, temp.U_NAME, temp.B_NAME),
             reply_markup=reply_markup,
             parse_mode='html'
         )
