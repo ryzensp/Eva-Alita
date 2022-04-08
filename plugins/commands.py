@@ -164,8 +164,7 @@ async def start(client, message: pyrogram.types.Message):
                
                 
                 await client.send_cached_media(
-                    chat_id=message.from_user.id,
-                    file_id=msg.get("file_id"),
+                    chat_id=message.from_user.id,                    
                     caption=script.START_TXT.format(message.from_user.mention),
                     protect_content=msg.get('protect', False),
                     reply_markup=InlineKeyboardMarkup(
@@ -184,11 +183,22 @@ async def start(client, message: pyrogram.types.Message):
        
 
                 await client.send_cached_media(
-                    chat_id=MY_CHANNEL,
+                    chat_id=message.from_user.id,
                     file_id=msg.get("file_id"),
                     caption=script.START_TXT.format(message.from_user.mention),
                     protect_content=msg.get('protect', False),
-                    )
+                    reply_markup=InlineKeyboardMarkup(
+                         [
+                             [
+                                 InlineKeyboardButton('🎁𝐀𝐝𝐝 𝐌𝐞 𝐓𝐨 𝐘𝐨𝐮𝐫 𝐆𝐫𝐨𝐮𝐩𝐬🎁', url="msg.get("file_id")")
+                             ],
+                             [
+                                 InlineKeyboardButton('🧩𝐆𝐨𝐨𝐠𝐥𝐞🧩', url="https://imdb.com"),
+                                 InlineKeyboardButton('☘𝐈𝐦𝐝𝐛☘', url="https://imdb.com")
+                             ]                            
+                         ]
+                     )
+                 )
             except FloodWait as e:
                 await asyncio.sleep(e.x)
                 logger.warning(f"Floodwait of {e.x} sec.")
