@@ -58,11 +58,27 @@ async def start(client, message: pyrogram.types.Message):
 
         reply_markup = InlineKeyboardMarkup(buttons)
 
-        await message.reply(
-            text=script.START_TXT.format(query.from_user.mention, temp.U_NAME, temp.B_NAME),
-            reply_markup=reply_markup,
-            parse_mode='html'
-        )
+        script.START_TXT.format(
+                    (message.from_user.mention if 
+                    message.from_user else 
+                    message.chat.title), 
+                    temp.U_NAME, 
+                    temp.B_NAME,
+                ),
+                reply_markup=reply_markup
+            )
+        else:
+            await message.reply_photo(
+                photo=START_IMAGE_URL,
+                caption=script.START_TXT.format(
+                    (message.from_user.mention if 
+                    message.from_user else 
+                    message.chat.title), 
+                    temp.U_NAME, 
+                    temp.B_NAME,
+                ),
+                reply_markup=reply_markup
+            )
         return
 
     if AUTH_CHANNEL and not await is_subscribed(client, message):
@@ -134,11 +150,27 @@ async def start(client, message: pyrogram.types.Message):
         ]]
         
         reply_markup = InlineKeyboardMarkup(buttons)
-        await message.reply((
-            text=script.START_TXT.format(query.from_user.mention, temp.U_NAME, temp.B_NAME),
-            reply_markup=reply_markup,
-            parse_mode='html'
-        )
+        script.START_TXT.format(
+                    (message.from_user.mention if 
+                    message.from_user else 
+                    message.chat.title), 
+                    temp.U_NAME, 
+                    temp.B_NAME,
+                ),
+                reply_markup=reply_markup
+            )
+        else:
+            await message.reply_photo(
+                photo=START_IMAGE_URL,
+                caption=script.START_TXT.format(
+                    (message.from_user.mention if 
+                    message.from_user else 
+                    message.chat.title), 
+                    temp.U_NAME, 
+                    temp.B_NAME,
+                ),
+                reply_markup=reply_markup
+            )
         return
     data = message.command[1]
     try:
