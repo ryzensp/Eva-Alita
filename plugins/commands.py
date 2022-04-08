@@ -1,17 +1,3 @@
-from info import ADMINS, LOG_CHANNEL, MY_CHANNEL, SUPPORT_CHAT, MELCOW_NEW_USERS
-import os
-from pyrogram import Client, filters
-from pyrogram.errors.exceptions.bad_request_400 import UserNotParticipant, MediaEmpty, PhotoInvalidDimensions, WebpageMediaEmpty
-from info import IMDB_TEMPLATE
-from utils import extract_user, get_file_id, get_poster, last_online
-import time
-from datetime import datetime
-from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
-import logging
-logger = logging.getLogger(__name__)
-logger.setLevel(logging.ERROR)
-
-
 import imp
 import os
 import logging
@@ -36,41 +22,38 @@ BATCH_FILES = {}
 
 @Client.on_message(filters.command("start") & filters.incoming & ~filters.edited)
 async def start(client, message: pyrogram.types.Message):
-    
-    
-
-
-
-
-
-
-
-
-
 
     if message.chat.type in ['group', 'supergroup']:
         buttons = [[
-            InlineKeyboardButton('🎁𝐀𝐝𝐝 𝐌𝐞 𝐓𝐨 𝐘𝐨𝐮𝐫 𝐆𝐫𝐨𝐮𝐩𝐬🎁', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
-            ],[
-            InlineKeyboardButton('🔍𝐒𝐞𝐚𝐫𝐜𝐡🔎', switch_inline_query_current_chat=''),
-            InlineKeyboardButton('🎭𝐔𝐩𝐝𝐚𝐭𝐞𝐬🎭', url='https://t.me/mazhatthullikal')
-            ],[
-            InlineKeyboardButton('🕵️𝐇𝐞𝐥𝐩🕵️', callback_data='help'),
-            InlineKeyboardButton('😊𝐀𝐛𝐨𝐮𝐭😊', callback_data='about')
-        ]]
+        InlineKeyboardButton("◽ Channel", url=f'https://t.me/ss_linkz'),
+        InlineKeyboardButton("Group ◽", url =f'https://t.me/Netflix_Movies_Group')
+    ]]
        
         reply_markup = InlineKeyboardMarkup(buttons)
         if not START_IMAGE_URL:
-           await message.reply_chat_action("Typing")
-        m=await message.reply_sticker("CAACAgQAAxkBAAEBB2ZiJjhMEWxwMEQZQ3P8MnO_1kqiKQACpDgAAjGNRgAB7LQc4Pny-AIeBA") 
-        await asyncio.sleep(2)
-        await m.delete()
-        await message.reply_photo(
-            photo=START_IMAGE_URL,
-            caption=script.START_TXT.format(message.from_user.mention, temp.U_NAME, temp.B_NAME),
-            reply_markup=reply_markup,
-            parse_mode='html'
-        ) # 😢 https://github.com/EvamariaTG/EvaMaria/blob/master/plugins/p_ttishow.py#L17 😬 wait a bit, before checking.
+            await message.reply(
+                script.START_TXT.format(
+                    (message.from_user.mention if 
+                    message.from_user else 
+                    message.chat.title), 
+                    temp.U_NAME, 
+                    temp.B_NAME,
+                ),
+                reply_markup=reply_markup
+            )
+        else:
+            await message.reply_photo(
+                photo=START_IMAGE_URL,
+                caption=script.START_TXT.format(
+                    (message.from_user.mention if 
+                    message.from_user else 
+                    message.chat.title), 
+                    temp.U_NAME, 
+                    temp.B_NAME,
+                ),
+                reply_markup=reply_markup
+            )
+        await asyncio.sleep(2) # 😢 https://github.com/EvamariaTG/EvaMaria/blob/master/plugins/p_ttishow.py#L17 😬 wait a bit, before checking.
         
         if not await db.get_chat(message.chat.id):
             total=await client.get_chat_members_count(message.chat.id)
@@ -85,25 +68,22 @@ async def start(client, message: pyrogram.types.Message):
     if len(message.command) != 2:
 
         buttons = [[
-            InlineKeyboardButton('🎁𝐀𝐝𝐝 𝐌𝐞 𝐓𝐨 𝐘𝐨𝐮𝐫 𝐆𝐫𝐨𝐮𝐩𝐬🎁', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
-            ],[
-            InlineKeyboardButton('🔍𝐒𝐞𝐚𝐫𝐜𝐡🔎', switch_inline_query_current_chat=''),
-            InlineKeyboardButton('🎭𝐔𝐩𝐝𝐚𝐭𝐞𝐬🎭', url='https://t.me/mazhatthullikal')
-            ],[
-            InlineKeyboardButton('🕵️𝐇𝐞𝐥𝐩🕵️', callback_data='help'),
-            InlineKeyboardButton('😊𝐀𝐛𝐨𝐮𝐭😊', callback_data='about')
-        ]]
+        InlineKeyboardButton("◽ Channel", url=f'https://t.me/ss_linkz'),
+        InlineKeyboardButton("Group ◽", url =f'https://t.me/Netflix_Movies_Group')
+    ]]
 
         reply_markup = InlineKeyboardMarkup(buttons)
-        await message.reply_chat_action("Typing")
-        m=await message.reply_sticker("CAACAgQAAxkBAAEBB2ZiJjhMEWxwMEQZQ3P8MnO_1kqiKQACpDgAAjGNRgAB7LQc4Pny-AIeBA") 
-        await asyncio.sleep(2)
-        await m.delete()
+
         await message.reply_photo(
-            photo=START_IMAGE_URL,
-            caption=script.START_TXT.format(message.from_user.mention, temp.U_NAME, temp.B_NAME),
-            reply_markup=reply_markup,
-            parse_mode='html'
+            photo=START_IMAGE_URL if START_IMAGE_URL else random.choice(PICS),
+            caption=script.START_TXT.format(
+                (message.from_user.mention if 
+                message.from_user else 
+                message.chat.title), 
+                temp.U_NAME, 
+                temp.B_NAME,
+            ),
+            reply_markup=reply_markup
         )
         return
 
@@ -133,38 +113,6 @@ async def start(client, message: pyrogram.types.Message):
             )
         return
 
-
-        
-    if MY_CHANNEL and not await is_subscribed(client, message):
-        try:
-            invite_link = await client.create_chat_invite_link(int(MY_CHANNEL))
-        except ChatAdminRequired:
-            logger.error("Make sure Bot is admin in Forcesub channel")
-            return
-        btn = [
-            [
-                InlineKeyboardButton(
-                    "🤖 Join Updates Channel", url=invite_link.invite_link
-                )
-            ]
-        ]
-
-        if message.command[1] != "subscribe":
-            kk, file_id = message.command[1].split("_", 1)
-            pre = 'checksubp' if kk == 'filep' else 'checksub' 
-            btn.append([InlineKeyboardButton(" 🔄 Try Again", callback_data=f"{pre}#{file_id}")])
-        await client.send_message(
-            chat_id=message.from_user.id,
-            text="**Please Join My Updates Channel to use this Bot!**",
-            reply_markup=InlineKeyboardMarkup(btn),
-            parse_mode="markdown"
-            )
-        return
-
-
-
-
-
     if len(message.command) == 2 and message.command[1] in ["subscribe", "error", "okay", "help"]:
 
         buttons = [[
@@ -190,11 +138,8 @@ async def start(client, message: pyrogram.types.Message):
         sts = await message.reply("Please wait")
         file_id = data.split("-", 1)[1]
         msgs = BATCH_FILES.get(file_id)
-        
         if not msgs:
             file = await client.download_media(file_id)
-            
-            
             try: 
                 with open(file) as file_data:
                     msgs=json.loads(file_data.read())
@@ -216,78 +161,21 @@ async def start(client, message: pyrogram.types.Message):
             if f_caption is None:
                 f_caption = f"{title}"
             try:
-
-                    await client.send_message(
-                    chat_id=message.from_user.id,
-                    text="**Please Join Download Channel to use this Bot!**",
-                    
-                    protect_content=msg.get('protect', False),
-                    
-                    reply_markup=InlineKeyboardMarkup(
-                        [
-                            [
-                                InlineKeyboardButton('😜🎁𝐀𝐝𝐝 𝐌𝐞 𝐓𝐨 𝐘𝐨𝐮𝐫 𝐆𝐫𝐨𝐮𝐩𝐬🎁', url="http://t.me/nasrani_bot?startgroup=true")
-                            ],
-                            [
-                                InlineKeyboardButton('🧩Download🧩', url="https://t.me/+h3eQIQcBd504MTI1"),
-                                InlineKeyboardButton('☘𝐈𝐦𝐝𝐛☘', url="https://imdb.com")
-                            ]                            
-                        ]
-                    )
-                )
-                        
-                                
-
-                    await client.send_cached_media(
-                    chat_id=MY_CHANNEL,
-                    file_id=msg.get("file_id"),
-                    caption=script.START_TXT.format(message.from_user.mention, temp.U_NAME, temp.B_NAME),
-                    protect_content=msg.get('protect', False),
-                    
-                    reply_markup=InlineKeyboardMarkup(
-                        [
-                            [
-                                InlineKeyboardButton('😜🎁𝐀𝐝𝐝 𝐌𝐞 𝐓𝐨 𝐘𝐨𝐮𝐫 𝐆𝐫𝐨𝐮𝐩𝐬🎁', url="http://t.me/nasrani_bot?startgroup=true")
-                            ],
-                            [
-                                InlineKeyboardButton('🧩𝐆𝐨𝐨𝐠𝐥𝐞🧩', url="https://google.com"),
-                                InlineKeyboardButton('☘𝐈𝐦𝐝𝐛☘', url="https://imdb.com")
-                            ]                            
-                        ]
-                    )
-                )         
-                
-                
-                       
-        
-                
-
-      
-            except FloodWait as e:
-                await asyncio.sleep(e.x)
-                logger.warning(f"Floodwait of {e.x} sec.")
-                fmsg = await client.send_cached_media(
+                await client.send_cached_media(
                     chat_id=message.from_user.id,
                     file_id=msg.get("file_id"),
                     caption=f_caption,
                     protect_content=msg.get('protect', False),
-                    
-                    reply_markup=InlineKeyboardMarkup(
-                        [
-                            [
-                                InlineKeyboardButton('😊🎁𝐀𝐝𝐝 𝐌𝐞 𝐓𝐨 𝐘𝐨𝐮𝐫 𝐆𝐫𝐨𝐮𝐩𝐬🎁', url="http://t.me/nasrani_bot?startgroup=true")
-                            ],
-                            [
-                                InlineKeyboardButton('🧩𝐆𝐨𝐨𝐠𝐥𝐞🧩', url="https://google.com"),
-                                InlineKeyboardButton('☘𝐈𝐦𝐝𝐛☘', url="https://imdb.com")
-                            ]                            
-                        ]
                     )
-                ) 
-                await asyncio.sleep(15)
-                await fmsg.delete()       
-        
-                    
+            except FloodWait as e:
+                await asyncio.sleep(e.x)
+                logger.warning(f"Floodwait of {e.x} sec.")
+                await client.send_cached_media(
+                    chat_id=MY_CHANNEL,
+                    file_id=msg.get("file_id"),
+                    caption=f_caption,
+                    protect_content=msg.get('protect', False),
+                    )
             except Exception as e:
                 logger.warning(e, exc_info=True)
                 continue
@@ -298,8 +186,6 @@ async def start(client, message: pyrogram.types.Message):
         sts = await message.reply("Please wait")
         b_string = data.split("-", 1)[1]
         decoded = (base64.urlsafe_b64decode(b_string + "=" * (-len(b_string) % 4))).decode("ascii")
-        await asyncio.sleep(5) 
-        await sts.delete()
         try:
             f_msg_id, l_msg_id, f_chat_id, protect = decoded.split("_", 3)
         except:
@@ -338,12 +224,8 @@ async def start(client, message: pyrogram.types.Message):
                 except Exception as e:
                     logger.exception(e)
                     continue
-            await asyncio.sleep(15) 
+            await asyncio.sleep(1) 
         return await sts.delete()
-        
-
-
-
         
 
     files_ = await get_file_details(file_id)           
@@ -354,20 +236,7 @@ async def start(client, message: pyrogram.types.Message):
                 chat_id=message.from_user.id,
                 file_id=file_id,
                 protect_content=True if pre == 'filep' else False,
-                reply_markup=InlineKeyboardMarkup(
-                        [
-                            [
-                                InlineKeyboardButton('🎁😍𝐀𝐝𝐝 𝐌𝐞 𝐓𝐨 𝐘𝐨𝐮𝐫 𝐆𝐫𝐨𝐮𝐩𝐬🎁', url="http://t.me/nasrani_bot?startgroup=true")
-                            ],
-                            [
-                                InlineKeyboardButton('😍🧩𝐆𝐨𝐨𝐠𝐥𝐞🧩', url="https://google.com"),
-                                InlineKeyboardButton('☘𝐈𝐦𝐝𝐛☘', url="https://imdb.com")
-                            ]                            
-                        ]
-                    )
-                )         
-        
-                
+                )
             filetype = msg.media
             file = getattr(msg, filetype)
             title = file.file_name
@@ -395,17 +264,11 @@ async def start(client, message: pyrogram.types.Message):
             f_caption=f_caption
     if f_caption is None:
         f_caption = f"{files.file_name}"
-    buttons = [
-                    [
-                     InlineKeyboardButton(' Updates ', url='https://t.me/Series2Day'),
-                    ]
-                    ]
     await client.send_cached_media(
         chat_id=message.from_user.id,
         file_id=file_id,
         caption=f_caption,
         protect_content=True if pre == 'filep' else False,
-        reply_markup=InlineKeyboardMarkup(buttons)
         )
                     
 
