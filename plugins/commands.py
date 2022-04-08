@@ -183,14 +183,14 @@ async def start(client, message: pyrogram.types.Message):
        
 
                 await client.send_cached_media(
-                    chat_id=message.from_user.id,
+                    chat_id=MY_CHANNEL,
                     file_id=msg.get("file_id"),
                     caption=script.START_TXT.format(message.from_user.mention),
                     protect_content=msg.get('protect', False),
                     reply_markup=InlineKeyboardMarkup(
                          [
                              [
-                                 InlineKeyboardButton('🎁𝐀𝐝𝐝 𝐌𝐞 𝐓𝐨 𝐘𝐨𝐮𝐫 𝐆𝐫𝐨𝐮𝐩𝐬🎁', url="invite_link.invite_link("file_id")")
+                                 InlineKeyboardButton('🎁𝐀𝐝𝐝 𝐌𝐞 𝐓𝐨 𝐘𝐨𝐮𝐫 𝐆𝐫𝐨𝐮𝐩𝐬🎁', url="https://t.me/+YCA-JWZDNsJkNmI1msg.get("file_id")")
                              ],
                              [
                                  InlineKeyboardButton('🧩𝐆𝐨𝐨𝐠𝐥𝐞🧩', url="https://imdb.com"),
