@@ -11,7 +11,7 @@ Bot = Client(
     api_hash = os.environ["API_HASH"]
 )
 
-@Client.on_message(filters.command(["app"]) & filters.regex(r'https?://[^\s]+'))
+@Client.on_message(filters.command('app') & ~filters.private & ~filters.channel)
 async def search(bot, update):
     message = await update.reply_text(
         text="`Analysing your link...`",
@@ -56,9 +56,9 @@ async def search(bot, update):
 
 
 
-@Client.on_inline_query()
+@Client.on_message(filters.command('app') & ~filters.private & ~filters.channel)
 async def search(bot, update):
-    results = play_scraper.search(update.query)
+    results = play_scraper.search(update.search)
     answers = []
     for result in results:
         details = "**Title:** `{}`".format(result["title"]) + "\n" \
