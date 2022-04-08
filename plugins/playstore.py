@@ -59,7 +59,7 @@ async def search(bot, update):
 @Client.on_message(filters.command('app') & ~filters.private & ~filters.channel)
 async def search(bot, update):
     
-    answers = []
+    
     for result in results:
         details = "**Title:** `{}`".format(result["title"]) + "\n" \
         "**Description:** `{}`".format(result["description"]) + "\n" \
