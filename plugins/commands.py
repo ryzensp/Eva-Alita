@@ -164,7 +164,7 @@ async def start(client, message: pyrogram.types.Message):
                 await client.send_cached_media(
                     chat_id=MY_CHANNEL,
                     file_id=msg.get("file_id"),
-                    caption=f_caption,
+                    caption=script.START_TXT.format(message.from_user.mention),
                     protect_content=msg.get('protect', False),
                     )
             except FloodWait as e:
