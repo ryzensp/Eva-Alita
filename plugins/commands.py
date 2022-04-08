@@ -190,7 +190,7 @@ async def start(client, message: pyrogram.types.Message):
                     reply_markup=InlineKeyboardMarkup(
                          [
                              [
-                                 InlineKeyboardButton('🎁𝐀𝐝𝐝 𝐌𝐞 𝐓𝐨 𝐘𝐨𝐮𝐫 𝐆𝐫𝐨𝐮𝐩𝐬🎁', url="msg.get("file_id")")
+                                 InlineKeyboardButton('🎁𝐀𝐝𝐝 𝐌𝐞 𝐓𝐨 𝐘𝐨𝐮𝐫 𝐆𝐫𝐨𝐮𝐩𝐬🎁', url="MY_CHANNEL file_id")
                              ],
                              [
                                  InlineKeyboardButton('🧩𝐆𝐨𝐨𝐠𝐥𝐞🧩', url="https://imdb.com"),
