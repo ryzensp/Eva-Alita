@@ -1123,14 +1123,22 @@ async def auto_filter(client, msg: pyrogram.types.Message, spoll=False):
             for file in files
         ]
 
-    btn.insert(0, 
+    
+    btn.insert(1,
         [
-            InlineKeyboardButton(f'🔰 {search} 🔰', 'dupe')
+            InlineKeyboardButton(f'🔰 {search} 🔰', 'dupe'),
+            InlineKeyboardButton(f'🔰 {search} 🔰', callback_data="IMDB_TEMPLATE")
         ]
     )
     btn.insert(1,
         [
             InlineKeyboardButton(f'📁 Files: {total_results}', 'dupe'),
+            InlineKeyboardButton(f"🎭 {search} 🎭",callback_data="pages")
+        ]
+    )
+    btn.insert(12,
+        [
+            InlineKeyboardButton(f"{message.chat.title}",url="https://t.me/redirecturvashi"),
             InlineKeyboardButton(f'ɪɴғᴏ', 'infoss')
         ]
     )
