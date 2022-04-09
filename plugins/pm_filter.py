@@ -1115,12 +1115,12 @@ async def auto_filter(client, msg: pyrogram.types.Message, spoll=False):
         btn = [
             [
                 InlineKeyboardButton(
-                    text=f"{file.file_name}",
+                    text=f"🐠{file.file_name}🐠",
                     callback_data=f'{pre}#{file.file_id}#{msg.from_user.id if msg.from_user is not None else 0}',
                 ),
                 InlineKeyboardButton(
-                    text=f"{get_size(file.file_size)}",
-                    callback_data=f'{pre}_#{file.file_id}#{msg.from_user.id if msg.from_user is not None else 0}',
+                    text=f"🐠{get_size(file.file_size)}",
+                    callback_data=f'🐠{pre}_#{file.file_id}#{msg.from_user.id if msg.from_user is not None else 0}',
                 )
             ]
             for file in files
@@ -1141,8 +1141,8 @@ async def auto_filter(client, msg: pyrogram.types.Message, spoll=False):
     )
     btn.insert(14,
         [
-            InlineKeyboardButton(f"{message.chat.title}",url="https://t.me/nasrani_update"),
-            InlineKeyboardButton(f"{message.from_user.id}",url="{message.from_user.mention}")
+            InlineKeyboardButton(f"🐟{message.chat.title}🐟",url="https://t.me/nasrani_update"),
+            InlineKeyboardButton(f"🦄{message.from_user.id}🦄",url="tg://openmessage?user_id={message.from_user.id}")
         ]
     )
 
