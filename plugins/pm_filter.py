@@ -1129,7 +1129,7 @@ async def auto_filter(client, msg: pyrogram.types.Message, spoll=False):
     
     btn.insert(0,
         [
-            InlineKeyboardButton(f'🔰 {search} 🔰', 'infoss')
+            InlineKeyboardButton(f'🔰 {search} 🔰', 'infoss'),
             
         ]
     )
@@ -1142,7 +1142,7 @@ async def auto_filter(client, msg: pyrogram.types.Message, spoll=False):
     btn.insert(14,
         [
             InlineKeyboardButton(f"{message.chat.title}",url="https://t.me/nasrani_update"),
-            InlineKeyboardButton(f'{message.from_user.id}', 'infoss')
+            InlineKeyboardButton(f'{message.from_user.mention}', 'infoss')
         ]
     )
 
