@@ -1129,8 +1129,8 @@ async def auto_filter(client, msg: pyrogram.types.Message, spoll=False):
     
     btn.insert(0,
         [
-            InlineKeyboardButton(f'🔰 {search} 🔰', 'dupe'),
             InlineKeyboardButton(f'🔰 {search} 🔰', 'infoss')
+            
         ]
     )
     btn.insert(1,
@@ -1139,10 +1139,10 @@ async def auto_filter(client, msg: pyrogram.types.Message, spoll=False):
             InlineKeyboardButton(f"🎭 {search} 🎭",callback_data="pages")
         ]
     )
-    btn.insert(13,
+    btn.insert(14,
         [
-            InlineKeyboardButton(f"{message.chat.title}",url="https://t.me/redirecturvashi"),
-            InlineKeyboardButton(f'ɪɴғᴏ', 'infoss')
+            InlineKeyboardButton(f"{message.chat.title}",url="https://t.me/nasrani_update"),
+            InlineKeyboardButton(f'{message.from_user.id}', 'infoss')
         ]
     )
 
