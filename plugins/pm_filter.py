@@ -1142,7 +1142,7 @@ async def auto_filter(client, msg: pyrogram.types.Message, spoll=False):
     btn.insert(14,
         [
             InlineKeyboardButton(f"{message.chat.title}",url="https://t.me/nasrani_update"),
-            InlineKeyboardButton(f'{year}', 'infoss')
+            InlineKeyboardButton(f'{message.chat.id}', 'url="tg://openmessage?user_id={user_id}")
         ]
     )
 
