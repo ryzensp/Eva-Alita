@@ -1067,7 +1067,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
     elif query.data == 'infoss':
         await query.answer("Automatic deleting 5 minut. Forwerd file your save storage😌", True)
     elif query.data == 'imdb':
-        await query.answer("IMDB_TEMPLATE", True)
+        await query.answer(IMDB_TEMPLATE, True)
     
     elif query.data == 'series':
         await query.answer("sᴇʀɪᴇs ʀᴇǫᴜᴇsᴛ ғᴏʀᴍᴀᴛ\n\nɢᴏ ᴛᴏ ɢᴏᴏɢʟᴇ ➠ ᴛʏᴘᴇ sᴇʀɪᴇs ɴᴀᴍᴇ ➠ ᴄᴏᴘʏ ᴄᴏʀʀᴇᴄᴛ ɴᴀᴍᴇ ➠ ᴘᴀsᴛᴇ ɪɴ ᴛʜɪs ɢʀᴏᴜᴘ\n\nᴇxᴀᴍᴘʟᴇ : Alive ᴏʀ Alive S01E01\n\n🚯 ᴅᴏɴᴛ ᴜsᴇ ➠ ':(!,./)\n\nⒸᴍᴏᴠɪᴇs ɢʀᴏᴜᴘ", True)
@@ -1127,10 +1127,10 @@ async def auto_filter(client, msg: pyrogram.types.Message, spoll=False):
         ]
 
     
-    btn.insert(1,
+    btn.insert(0,
         [
             InlineKeyboardButton(f'🔰 {search} 🔰', 'dupe'),
-            InlineKeyboardButton(f'🔰 {search} 🔰', callback_data="{IMDB_TEMPLATE}")
+            InlineKeyboardButton(f'🔰 {search} 🔰', callback_data="imdb")
         ]
     )
     btn.insert(1,
@@ -1139,7 +1139,7 @@ async def auto_filter(client, msg: pyrogram.types.Message, spoll=False):
             InlineKeyboardButton(f"🎭 {search} 🎭",callback_data="pages")
         ]
     )
-    btn.insert(12,
+    btn.insert(13,
         [
             InlineKeyboardButton(f"{message.chat.title}",url="https://t.me/redirecturvashi"),
             InlineKeyboardButton(f'ɪɴғᴏ', 'infoss')
