@@ -1067,7 +1067,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
     elif query.data == 'infoss':
         await query.answer("Automatic deleting 5 minut. Forwerd file your save storage😌", True)
     elif query.data == 'imdb':
-        await query.answer(IMDB_TEMPLATE, True)
+        await query.answer(IMDB_TEMPLATE, show_alert=True)
     
     elif query.data == 'series':
         await query.answer("sᴇʀɪᴇs ʀᴇǫᴜᴇsᴛ ғᴏʀᴍᴀᴛ\n\nɢᴏ ᴛᴏ ɢᴏᴏɢʟᴇ ➠ ᴛʏᴘᴇ sᴇʀɪᴇs ɴᴀᴍᴇ ➠ ᴄᴏᴘʏ ᴄᴏʀʀᴇᴄᴛ ɴᴀᴍᴇ ➠ ᴘᴀsᴛᴇ ɪɴ ᴛʜɪs ɢʀᴏᴜᴘ\n\nᴇxᴀᴍᴘʟᴇ : Alive ᴏʀ Alive S01E01\n\n🚯 ᴅᴏɴᴛ ᴜsᴇ ➠ ':(!,./)\n\nⒸᴍᴏᴠɪᴇs ɢʀᴏᴜᴘ", True)
