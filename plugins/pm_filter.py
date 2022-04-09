@@ -1127,7 +1127,7 @@ async def auto_filter(client, msg: pyrogram.types.Message, spoll=False):
     btn.insert(1,
         [
             InlineKeyboardButton(f'🔰 {search} 🔰', 'dupe'),
-            InlineKeyboardButton(f'🔰 {search} 🔰', callback_data="IMDB_TEMPLATE")
+            InlineKeyboardButton(f'🔰 {search} 🔰', callback_data="{IMDB_TEMPLATE}")
         ]
     )
     btn.insert(1,
