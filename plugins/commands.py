@@ -122,10 +122,10 @@ async def start(client, message: pyrogram.types.Message):
         return
 
     if len(message.command) == 2 and message.command[1] in ["subscribe", "error", "okay", "help"]:
-    await message.reply_chat_action("Typing")
-    m=await message.reply_sticker("CAACAgUAAx0CQTCW0gABB5EUYkx6-OZS7qCQC6kNGMagdQOqozoAAgQAA8EkMTGJ5R1uC7PIECME") 
-    await asyncio.sleep(2)
-    await m.delete()
+        await message.reply_chat_action("Typing")
+        m=await message.reply_sticker("CAACAgUAAx0CQTCW0gABB5EUYkx6-OZS7qCQC6kNGMagdQOqozoAAgQAA8EkMTGJ5R1uC7PIECME") 
+        await asyncio.sleep(2)
+        await m.delete()
 
         buttons = [[
         InlineKeyboardButton("◽ Channel", url=f'https://t.me/ss_linkz'),
