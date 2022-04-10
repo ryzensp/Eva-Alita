@@ -3,10 +3,13 @@ class script(object):
 
  𝗠ʏ 𝗡ᴀᴍᴇ ɪ𝘀  ᴀᴜᴛᴏ ꜰɪʟᴛᴇʀ
 
-𝗜'𝗺 𝗮𝗻 𝗔𝗱𝘃𝗮𝗻𝗰𝗲𝗱 𝗳𝗶𝗹𝘁𝗲𝗿 𝗯𝗼𝘁
-
- I am Currently working for @SS_Linkz
-
+𝖨'𝗆 𝖺 𝖴𝗌𝖾𝗋-𝖥𝗋𝗂𝖾𝗇𝖽𝗅𝗒 𝗀𝗋𝗈𝗎𝗉 𝖬𝖺𝗇𝖺𝗀𝖾𝗋 
+➢ <b>Build Version</b>: <code>V2.1.0 [BETA]</code>
+➢ <b>Speciality</b>: <code>Movie Provider</code>
+𝖢𝗅𝗂𝖼𝗄 <b>𝖧𝖾𝗅𝗉</b> 𝗍𝗈 𝗆𝗒 𝖥𝗎𝗇𝖼𝗍𝗂𝗈𝗇𝗌<a href='https://telegra.ph/file/eaf97e4782f05b667e551.jpg'>.</a>"""
+    HELP_TXT = """𝖶𝖺𝗌𝗌𝗎p {},
+about: 𝖳𝗈 𝗄𝗇𝗈𝗐 𝗆𝗒 𝖽𝖾𝗍𝖺𝗂𝗅𝗌
+𝚃𝙰𝙿 𝙾𝙽 𝙴𝙰𝙲𝙷 𝙼𝙾𝙳𝚄𝙻𝙴 𝚃𝙾 𝙶𝙴𝚃 𝚃𝙷𝙴 𝙳𝙴𝚃𝙰𝙸𝙻𝚂 ✨."""
 """
     HELP_TXT = """<b>𝖧𝖾𝗋𝖾 𝗂𝗌 𝗍𝗁𝖾 𝖴𝗌𝗎𝖺𝗅 𝖼𝗈𝗆𝗆𝖺𝗇𝖽𝗌:</b>
 """
