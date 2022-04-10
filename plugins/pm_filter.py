@@ -110,6 +110,12 @@ async def next_page(bot, query):
             for file in files
         ]
 
+    btn.insert(0, 
+        [
+            InlineKeyboardButton(f'🔰 {search} 🔰', 'dupe')
+        ]
+    )
+
     btn.insert(0,
         [
             InlineKeyboardButton(f'🔰 {search} 🔰', 'infoss'),
@@ -118,7 +124,7 @@ async def next_page(bot, query):
     )
     btn.insert(1,
         [
-            InlineKeyboardButton(f'📁 Files: {total_results}', 'dupe'),
+            InlineKeyboardButton(f'📁 Files: {len(files)}', 'dupe'),
             InlineKeyboardButton(f"🎭 {search} 🎭",callback_data="pages")
         ]
     )
