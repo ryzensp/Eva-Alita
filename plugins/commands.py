@@ -28,10 +28,10 @@ async def start(client, message: pyrogram.types.Message):
         m=await message.reply_sticker("CAACAgUAAx0CQTCW0gABB5EUYkx6-OZS7qCQC6kNGMagdQOqozoAAgQAA8EkMTGJ5R1uC7PIECME") 
         await asyncio.sleep(2)
         await m.delete()
-        buttons = [[
-        InlineKeyboardButton("◽ Channel", url=f'https://t.me/ss_linkz'),
-        InlineKeyboardButton("Group ◽", url =f'https://t.me/Netflix_Movies_Group')
-    ]]
+        buttons = [[            
+            InlineKeyboardButton('🕵️Munu🕵️', callback_data='menu'),
+            InlineKeyboardButton('😊𝐀𝐛𝐨𝐮𝐭😊', callback_data='about')
+        ]]
        
         reply_markup = InlineKeyboardMarkup(buttons)
         if not START_IMAGE_URL:
@@ -77,10 +77,10 @@ async def start(client, message: pyrogram.types.Message):
 
         
                    
-        buttons = [[
-        InlineKeyboardButton("◽ Channel", url=f'https://t.me/ss_linkz'),
-        InlineKeyboardButton("Group ◽", url =f'https://t.me/Netflix_Movies_Group')
-    ]]
+        buttons = [[            
+            InlineKeyboardButton('🕵️𝐇𝐞𝐥𝐩🕵️', callback_data='help'),
+            InlineKeyboardButton('😊𝐀𝐛𝐨𝐮𝐭😊', callback_data='about')
+        ]]
 
         reply_markup = InlineKeyboardMarkup(buttons)
 
@@ -106,7 +106,7 @@ async def start(client, message: pyrogram.types.Message):
         btn = [
             [
                 InlineKeyboardButton(
-                    "🤖 Join Updates Channel", url=invite_link.invite_link
+                    "📩𝐉𝐨𝐢𝐧 𝐔𝐩𝐝𝐚𝐭𝐞𝐬 𝐂𝐡𝐚𝐧𝐧𝐞𝐥📩", url=invite_link.invite_link
                 )
             ]
         ]
@@ -129,10 +129,10 @@ async def start(client, message: pyrogram.types.Message):
         await asyncio.sleep(2)
         await m.delete()
 
-        buttons = [[
-        InlineKeyboardButton("◽ Channel", url=f'https://t.me/ss_linkz'),
-        InlineKeyboardButton("Group ◽", url =f'https://t.me/Netflix_Movies_Group')
-    ]]
+        buttons = [[            
+            InlineKeyboardButton('🕵️𝐇𝐞𝐥𝐩🕵️', callback_data='help'),
+            InlineKeyboardButton('😊𝐀𝐛𝐨𝐮𝐭😊', callback_data='about')
+        ]]
         
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply_photo(
