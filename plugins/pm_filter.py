@@ -115,23 +115,10 @@ async def next_page(bot, query):
             InlineKeyboardButton(f'🔰 {search} 🔰', 'dupe')
         ]
     )
-
-    btn.insert(0,
-        [
-            InlineKeyboardButton(f'🔰 {search} 🔰', 'infoss'),
-            
-        ]
-    )
     btn.insert(1,
         [
             InlineKeyboardButton(f'📁 Files: {len(files)}', 'dupe'),
-            InlineKeyboardButton(f"🎭 {search} 🎭",callback_data="pages")
-        ]
-    )
-    btn.insert(14,
-        [
-            InlineKeyboardButton(f"🐟{message.chat.title}🐟",url="https://t.me/nasrani_update"),
-            InlineKeyboardButton(f"🦄{message.from_user.id}🦄",url="tg://openmessage?user_id={user_id}")
+            InlineKeyboardButton(f'‼️ Tips', 'tips')
         ]
     )
     await message.reply_chat_action("Typing")
