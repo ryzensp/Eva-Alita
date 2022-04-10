@@ -78,24 +78,24 @@ async def start(client, bot, query, k, message: pyrogram.types.Message):
 
         
         
-            k = await query.message.edit_text(
-            text="▣▢▢▢▢▢"
-        )
-            k = await query.message.edit_text(
-            text="▣▣▢▢▢▢"
-        )
-            k = await query.message.edit_text(
-            text="▣▣▣▢▢▢"
-        )
-            k = await query.message.edit_text(
-            text="▣▣▣▣▢▢"
-        )
-            k = await query.message.edit_text(
-            text="▣▣▣▣▣▢"
-        )
-            k = await query.message.edit_text(
-            text="▣▣▣▣▣▣"
-        )
+        k = await query.message.edit_text(
+        text="▣▢▢▢▢▢"
+    )
+        k = await query.message.edit_text(
+        text="▣▣▢▢▢▢"
+    )
+        k = await query.message.edit_text(
+        text="▣▣▣▢▢▢"
+    )
+        k = await query.message.edit_text(
+        text="▣▣▣▣▢▢"
+    )
+        k = await query.message.edit_text(
+        text="▣▣▣▣▣▢"
+    )
+        k = await query.message.edit_text(
+        text="▣▣▣▣▣▣"
+    )
 
      
 
