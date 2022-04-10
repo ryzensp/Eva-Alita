@@ -75,30 +75,8 @@ async def start(client, message: pyrogram.types.Message):
         await asyncio.sleep(2)
         await m.delete()
 
-
         
-        
-        k = await query.message.edit_text(
-        text="▣▢▢▢▢▢"
-    )
-        k = await query.message.edit_text(
-        text="▣▣▢▢▢▢"
-    )
-        k = await query.message.edit_text(
-        text="▣▣▣▢▢▢"
-    )
-        k = await query.message.edit_text(
-        text="▣▣▣▣▢▢"
-    )
-        k = await query.message.edit_text(
-        text="▣▣▣▣▣▢"
-    )
-        k = await query.message.edit_text(
-        text="▣▣▣▣▣▣"
-    )
-
-     
-
+                   
         buttons = [[
         InlineKeyboardButton("◽ Channel", url=f'https://t.me/ss_linkz'),
         InlineKeyboardButton("Group ◽", url =f'https://t.me/Netflix_Movies_Group')
