@@ -31,6 +31,12 @@ async def start(client, message: pyrogram.types.Message):
        
         reply_markup = InlineKeyboardMarkup(buttons)
         if not START_IMAGE_URL:
+
+            await message.reply_chat_action("Typing")
+            m=await message.reply_sticker("CAACAgUAAx0CQTCW0gABB5EUYkx6-OZS7qCQC6kNGMagdQOqozoAAgQAA8EkMTGJ5R1uC7PIECME") 
+            await asyncio.sleep(2)
+            await m.delete()
+
             await message.reply(
                 script.START_TXT.format(
                     (message.from_user.mention if 
@@ -54,10 +60,7 @@ async def start(client, message: pyrogram.types.Message):
                 reply_markup=reply_markup
             )
 
-            await message.reply_chat_action("Typing")
-            m=await message.reply_sticker("CAACAgUAAx0CQTCW0gABB5EUYkx6-OZS7qCQC6kNGMagdQOqozoAAgQAA8EkMTGJ5R1uC7PIECME") 
-            await asyncio.sleep(2)
-            await m.delete()
+            
        
           # 😢 https://github.com/EvamariaTG/EvaMaria/blob/master/plugins/p_ttishow.py#L17 😬 wait a bit, before checking.
         
@@ -77,8 +80,14 @@ async def start(client, message: pyrogram.types.Message):
         InlineKeyboardButton("◽ Channel", url=f'https://t.me/ss_linkz'),
         InlineKeyboardButton("Group ◽", url =f'https://t.me/Netflix_Movies_Group')
     ]]
-
         reply_markup = InlineKeyboardMarkup(buttons)
+
+        await message.reply_chat_action("Typing")
+        m=await message.reply_sticker("CAACAgUAAx0CQTCW0gABB5EUYkx6-OZS7qCQC6kNGMagdQOqozoAAgQAA8EkMTGJ5R1uC7PIECME") 
+        await asyncio.sleep(2)
+        await m.delete()
+
+        
 
         await message.reply_photo(
             photo=START_IMAGE_URL if START_IMAGE_URL else random.choice(PICS),
@@ -92,10 +101,7 @@ async def start(client, message: pyrogram.types.Message):
             reply_markup=reply_markup
         )
 
-        await message.reply_chat_action("Typing")
-        m=await message.reply_sticker("CAACAgUAAx0CQTCW0gABB5EUYkx6-OZS7qCQC6kNGMagdQOqozoAAgQAA8EkMTGJ5R1uC7PIECME") 
-        await asyncio.sleep(2)
-        await m.delete()
+        
 
          
         return
