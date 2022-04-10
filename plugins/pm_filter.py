@@ -1217,7 +1217,7 @@ async def auto_filter(client, msg: pyrogram.types.Message, spoll=False):
     else:
         fmsg = await message.reply_text(cap, reply_markup=InlineKeyboardMarkup(btn))
     
-    await asyncio.sleep(DELETE_TIME)
+    await asyncio.sleep(600)
     await fmsg.delete()
 
     if spoll:
