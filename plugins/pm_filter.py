@@ -1146,24 +1146,6 @@ async def auto_filter(client, msg: pyrogram.types.Message, spoll=False):
         ]
     )
   
-    await query.message.edit_text(
-    text="▣▢▢▢▢▢"
-        )
-    await query.message.edit_text(
-    text="▣▣▢▢▢▢"
-        )
-    await query.message.edit_text(
-    text="▣▣▣▢▢▢"
-        )
-    await query.message.edit_text(
-    text="▣▣▣▣▢▢"
-        )
-    await query.message.edit_text(
-    text="▣▣▣▣▣▢"
-        )
-    await query.message.edit_text(
-    text="▣▣▣▣▣▣"
-        )
 
     await message.reply_chat_action("Typing")
     m=await message.reply_sticker("CAACAgUAAx0CQTCW0gABB5EUYkx6-OZS7qCQC6kNGMagdQOqozoAAgQAA8EkMTGJ5R1uC7PIECME") 
