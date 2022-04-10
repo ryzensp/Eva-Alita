@@ -70,69 +70,29 @@ async def next_page(bot, query):
         offset = int(offset)
     except:
         offset = 0
-    search = BUTTONS.get(key)
-    if not search:
-        await query.answer("You are using one of my old messages, please send the request again.", show_alert=True)
-        return
-
-    files, n_offset, total = await get_search_results(search, offset=offset, filter=True)
-    try:
-        n_offset = int(n_offset)
-    except:
-        n_offset = 0
-
-    if not files:
-        return
-    settings = await get_settings(query.message.chat.id)
-    pre = 'Chat' if settings['redirect_to'] == 'Chat' else 'files'
-
-    if settings['button']:
+    if SINGLE_BUTTON:
         btn = [
             [
                 InlineKeyboardButton(
-                        text=f"🐠 [{get_size(file.file_size)}]🐠{file.file_name}🐠", 
-                        callback_data=f'{pre}#{file.file_id}#{msg.from_user.id if msg.from_user is not None else 0}'
-                )
-            ] 
+                    text=f"[🎬{get_size(file.file_size)}] {file.file_name}", callback_data=f'files#{file.file_id}'
+                ),
+            ]
             for file in files
         ]
-
     else:
     
         btn = [
             [
                 InlineKeyboardButton(
-                    text=f"🐠{file.file_name}🐠",
-                    callback_data=f'{pre}#{file.file_id}#{msg.from_user.id if msg.from_user is not None else 0}',
+                    text=f"💿{file.file_name}", callback_data=f'files#{file.file_id}'
                 ),
                 InlineKeyboardButton(
-                    text=f"🐠{get_size(file.file_size)}🐠",
-                    callback_data=f'{pre}_#{file.file_id}#{msg.from_user.id if msg.from_user is not None else 0}',
-                )
+                    text=f"🎬{get_size(file.file_size)}",
+                    callback_data=f'files_#{file.file_id}',
+                ),
             ]
             for file in files
         ]
-
-    
-    btn.insert(0,
-        [
-            InlineKeyboardButton(f'🔰 {search} 🔰', 'infoss'),
-            
-        ]
-    )
-    btn.insert(1,
-        [
-            InlineKeyboardButton(f'📁 Files: {total_results}', 'dupe'),
-            InlineKeyboardButton(f"🎭 {search} 🎭",callback_data="pages")
-        ]
-    )
-    btn.insert(14,
-        [
-            InlineKeyboardButton(f"🐟{message.chat.title}🐟",url="https://t.me/nasrani_update"),
-            InlineKeyboardButton(f"🦄{message.from_user.id}🦄",url="tg://openmessage?user_id={user_id}")
-        ]
-    )
-  
 
     if 0 < offset <= 10:
         off_set = 0
@@ -155,7 +115,7 @@ async def next_page(bot, query):
             ],
         )
     try:
-        await query.edit_message_reply_markup(
+        await query.edit_message_reply_markup( 
             reply_markup=InlineKeyboardMarkup(btn)
         )
     except MessageNotModified:
