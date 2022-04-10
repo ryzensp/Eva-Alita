@@ -24,10 +24,7 @@ BATCH_FILES = {}
 async def start(client, message: pyrogram.types.Message):
 
     if message.chat.type in ['group', 'supergroup']:
-        await message.reply_chat_action("Typing")
-        m=await message.reply_sticker("CAACAgUAAx0CQTCW0gABB5EUYkx6-OZS7qCQC6kNGMagdQOqozoAAgQAA8EkMTGJ5R1uC7PIECME") 
-        await asyncio.sleep(2)
-        await m.delete()
+        
 
         buttons = [
             [
@@ -39,7 +36,14 @@ async def start(client, message: pyrogram.types.Message):
             ]
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply(script.START_TXT.format(message.from_user.mention if message.from_user else message.chat.title, temp.U_NAME, temp.B_NAME), reply_markup=reply_markup)
-        await asyncio.sleep(2) # 😢 https://github.com/EvamariaTG/EvaMaria/blob/master/plugins/p_ttishow.py#L17 😬 wait a bit, before checking.
+        await asyncio.sleep(2)
+
+        await message.reply_chat_action("Typing")
+        m=await message.reply_sticker("CAACAgUAAx0CQTCW0gABB5EUYkx6-OZS7qCQC6kNGMagdQOqozoAAgQAA8EkMTGJ5R1uC7PIECME") 
+        await asyncio.sleep(2)
+        await m.delete()
+
+ # 😢 https://github.com/EvamariaTG/EvaMaria/blob/master/plugins/p_ttishow.py#L17 😬 wait a bit, before checking.
         if not await db.get_chat(message.chat.id):
             total=await client.get_chat_members_count(message.chat.id)
             await client.send_message(LOG_CHANNEL, script.LOG_TEXT_G.format(message.chat.title, message.chat.id, total, "Unknown"))       
@@ -49,11 +53,7 @@ async def start(client, message: pyrogram.types.Message):
         await db.add_user(message.from_user.id, message.from_user.first_name)
         await client.send_message(LOG_CHANNEL, script.LOG_TEXT_P.format(message.from_user.id, message.from_user.mention))
     if len(message.command) != 2:
-        await message.reply_chat_action("Typing")
-        m=await message.reply_sticker("CAACAgUAAx0CQTCW0gABB5EUYkx6-OZS7qCQC6kNGMagdQOqozoAAgQAA8EkMTGJ5R1uC7PIECME") 
-        await asyncio.sleep(2)
-        await m.delete()
-        
+              
 
         buttons = [[
             InlineKeyboardButton('➕ Add Me To Your Groups ➕', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
@@ -73,6 +73,12 @@ async def start(client, message: pyrogram.types.Message):
             reply_markup=reply_markup,
             parse_mode='html'
         )
+   
+        await message.reply_chat_action("Typing")
+        m=await message.reply_sticker("CAACAgUAAx0CQTCW0gABB5EUYkx6-OZS7qCQC6kNGMagdQOqozoAAgQAA8EkMTGJ5R1uC7PIECME") 
+        await asyncio.sleep(2)
+        await m.delete()      
+
         return
     if AUTH_CHANNEL and not await is_subscribed(client, message):
         try:
@@ -104,10 +110,7 @@ async def start(client, message: pyrogram.types.Message):
         return
     if len(message.command) == 2 and message.command[1] in ["subscribe", "error", "okay", "help"]:
 
-        await message.reply_chat_action("Typing")
-        m=await message.reply_sticker("CAACAgUAAx0CQTCW0gABB5EUYkx6-OZS7qCQC6kNGMagdQOqozoAAgQAA8EkMTGJ5R1uC7PIECME") 
-        await asyncio.sleep(2)
-        await m.delete()
+      
 
         buttons = [[
             InlineKeyboardButton('➕ Add Me To Your Groups ➕', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
@@ -126,7 +129,10 @@ async def start(client, message: pyrogram.types.Message):
             reply_markup=reply_markup,
             parse_mode='html'
         )
-         
+        await message.reply_chat_action("Typing")
+        m=await message.reply_sticker("CAACAgUAAx0CQTCW0gABB5EUYkx6-OZS7qCQC6kNGMagdQOqozoAAgQAA8EkMTGJ5R1uC7PIECME") 
+        await asyncio.sleep(2)
+        await m.delete()
         return
 
     if AUTH_CHANNEL and not await is_subscribed(client, message):
