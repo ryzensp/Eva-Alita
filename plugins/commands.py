@@ -53,7 +53,13 @@ async def start(client, message: pyrogram.types.Message):
                 ),
                 reply_markup=reply_markup
             )
-        await asyncio.sleep(2) # 😢 https://github.com/EvamariaTG/EvaMaria/blob/master/plugins/p_ttishow.py#L17 😬 wait a bit, before checking.
+
+            await message.reply_chat_action("Typing")
+            m=await message.reply_sticker("CAACAgUAAx0CQTCW0gABB5EUYkx6-OZS7qCQC6kNGMagdQOqozoAAgQAA8EkMTGJ5R1uC7PIECME") 
+            await asyncio.sleep(2)
+            await m.delete()
+       
+          # 😢 https://github.com/EvamariaTG/EvaMaria/blob/master/plugins/p_ttishow.py#L17 😬 wait a bit, before checking.
         
         if not await db.get_chat(message.chat.id):
             total=await client.get_chat_members_count(message.chat.id)
@@ -85,6 +91,13 @@ async def start(client, message: pyrogram.types.Message):
             ),
             reply_markup=reply_markup
         )
+
+        await message.reply_chat_action("Typing")
+        m=await message.reply_sticker("CAACAgUAAx0CQTCW0gABB5EUYkx6-OZS7qCQC6kNGMagdQOqozoAAgQAA8EkMTGJ5R1uC7PIECME") 
+        await asyncio.sleep(2)
+        await m.delete()
+
+         
         return
 
     if AUTH_CHANNEL and not await is_subscribed(client, message):
