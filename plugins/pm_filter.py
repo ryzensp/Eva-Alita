@@ -117,8 +117,8 @@ async def next_page(bot, query):
     )
     btn.insert(1,
         [
-            InlineKeyboardButton(f'📁 Files: {len(files)}', 'dupe'),
-            InlineKeyboardButton(f'‼️ Tips', 'tips')
+            InlineKeyboardButton(f'🗃️ 𝐅𝐈𝐋𝐄𝐒: {len(files)}', 'dupe'),
+            InlineKeyboardButton(f'📝 𝐈𝐍𝐅𝐎', 'infoss')
         ]
     )
     
@@ -131,20 +131,20 @@ async def next_page(bot, query):
         off_set = offset - 10
     if n_offset == 0:
         btn.append(
-            [InlineKeyboardButton("⏪ 𝙱𝙰𝙲𝙺", callback_data=f"next_{req}_{key}_{off_set}"),
-             InlineKeyboardButton(f"📃 Pages {round(int(offset) / 10) + 1} / {round(total / 10)}",
+            [InlineKeyboardButton("⟲𝐁𝐀𝐂𝐊⟲", callback_data=f"next_{req}_{key}_{off_set}"),
+             InlineKeyboardButton(f"📃 𝐏𝐀𝐆𝐄 {round(int(offset) / 10) + 1} / {round(total / 10)}",
                                   callback_data="pages")]
         )
     elif off_set is None:
         btn.append(
-            [InlineKeyboardButton(f"🗓 {round(int(offset) / 10) + 1} / {round(total / 10)}", callback_data="pages"),
-             InlineKeyboardButton("𝙽𝙴𝚇𝚃 ⏩", callback_data=f"next_{req}_{key}_{n_offset}")])
+            [InlineKeyboardButton(f"❎ {round(int(offset) / 10) + 1} / {round(total / 10)}", callback_data="pages"),
+             InlineKeyboardButton("⟳𝐍𝐄𝐗𝐓⟳", callback_data=f"next_{req}_{key}_{n_offset}")])
     else:
         btn.append(
             [
-                InlineKeyboardButton("⏪ 𝙱𝙰𝙲𝙺", callback_data=f"next_{req}_{key}_{off_set}"),
-                InlineKeyboardButton(f"🗓 {round(int(offset) / 10) + 1} / {round(total / 10)}", callback_data="pages"),
-                InlineKeyboardButton("𝙽𝙴𝚇𝚃 ⏩", callback_data=f"next_{req}_{key}_{n_offset}")
+                InlineKeyboardButton("⟲𝐁𝐀𝐂𝐊⟲", callback_data=f"next_{req}_{key}_{off_set}"),
+                InlineKeyboardButton(f"❎ {round(int(offset) / 10) + 1} / {round(total / 10)}", callback_data="pages"),
+                InlineKeyboardButton("⟳𝐍𝐄𝐗𝐓⟳", callback_data=f"next_{req}_{key}_{n_offset}")
             ],
         )
     try:
@@ -1161,12 +1161,12 @@ async def auto_filter(client, msg: pyrogram.types.Message, spoll=False):
         BUTTONS[key] = search
         req = message.from_user.id if message.from_user else 0
         btn.append(
-            [InlineKeyboardButton(text=f"🗓 1/{round(int(total_results) / 10)}", callback_data="pages"),
-             InlineKeyboardButton(text="NEXT ⏩", callback_data=f"next_{req}_{key}_{offset}")]
+            [InlineKeyboardButton(text=f"❎ 1/{round(int(total_results) / 10)}", callback_data="pages"),
+             InlineKeyboardButton(text="⟳𝐍𝐄𝐗𝐓⟳", callback_data=f"next_{req}_{key}_{offset}")]
         )
     else:
         btn.append(
-            [InlineKeyboardButton(text="🗓 1/1", callback_data="pages")]
+            [InlineKeyboardButton(text="❎ 1/1", callback_data="pages")]
         )
     imdb = await get_poster(search, file=(files[0]).file_name) if settings["imdb"] else None
     TEMPLATE = settings['template']
