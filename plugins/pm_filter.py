@@ -195,7 +195,7 @@ async def advantage_spoll_choker(bot, query):
             k = await query.message.edit_text(
             text="▣▣▣▣▣▣"
         )
-            k = await query.message.edit('/report \n @admin \n😄നിങ്ങളുടെ മൂവീസ് ഉടനെ ആഡ് ചെയ്യുന്നതാണ്.')
+            k = await query.message.edit('😄നിങ്ങളുടെ മൂവീസ് ഉടനെ ആഡ് ചെയ്യുന്നതാണ്.@nasrani_update_join @munnipopz')
         await asyncio.sleep(10000)
         await k.delete()
 
