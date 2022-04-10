@@ -1105,16 +1105,6 @@ async def auto_filter(client, msg: pyrogram.types.Message, spoll=False):
         btn = [
             [
                 InlineKeyboardButton(
-                        text=f"📂 [{get_size(file.file_size)}] {file.file_name}", 
-                        callback_data=f'{pre}#{file.file_id}#{msg.from_user.id if msg.from_user is not None else 0}'
-                )
-            ] 
-            for file in files
-        ]
-    else:
-        btn = [
-            [
-                InlineKeyboardButton(
                     text=f"🐠{file.file_name}🐠",
                     callback_data=f'{pre}#{file.file_id}#{msg.from_user.id if msg.from_user is not None else 0}',
                 ),
@@ -1123,6 +1113,16 @@ async def auto_filter(client, msg: pyrogram.types.Message, spoll=False):
                     callback_data=f'{pre}_#{file.file_id}#{msg.from_user.id if msg.from_user is not None else 0}',
                 )
             ]
+            for file in files
+        ]
+    else:
+        btn = [
+            [
+                InlineKeyboardButton(
+                        text=f"🐠 [{get_size(file.file_size)}] {file.file_name}🐠", 
+                        callback_data=f'{pre}#{file.file_id}#{msg.from_user.id if msg.from_user is not None else 0}'
+                )
+            ] 
             for file in files
         ]
 
@@ -1145,6 +1145,25 @@ async def auto_filter(client, msg: pyrogram.types.Message, spoll=False):
             InlineKeyboardButton(f"🦄{message.from_user.id}🦄",url="tg://openmessage?user_id={user_id}")
         ]
     )
+  
+    await query.message.edit_text(
+    text="▣▢▢▢▢▢"
+        )
+    await query.message.edit_text(
+    text="▣▣▢▢▢▢"
+        )
+    await query.message.edit_text(
+    text="▣▣▣▢▢▢"
+        )
+    await query.message.edit_text(
+    text="▣▣▣▣▢▢"
+        )
+    await query.message.edit_text(
+    text="▣▣▣▣▣▢"
+        )
+    await query.message.edit_text(
+    text="▣▣▣▣▣▣"
+        )
 
     await message.reply_chat_action("Typing")
     m=await message.reply_sticker("CAACAgUAAx0CQTCW0gABB5EUYkx6-OZS7qCQC6kNGMagdQOqozoAAgQAA8EkMTGJ5R1uC7PIECME") 
