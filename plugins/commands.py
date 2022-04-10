@@ -77,7 +77,7 @@ async def start(client, message: pyrogram.types.Message):
 
 
         await message.reply_chat_action(bot, query, k)
-        else:
+        
             k = await query.message.edit_text(
             text="▣▢▢▢▢▢"
         )
