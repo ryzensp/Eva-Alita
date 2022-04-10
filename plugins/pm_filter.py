@@ -1222,6 +1222,8 @@ async def auto_filter(client, msg: pyrogram.types.Message, spoll=False):
     
     await asyncio.sleep(600)
     await fmsg.delete()
+    await message.reply_text(text=f"⚙️ Fɪʟᴛᴇʀ Fᴏʀ {search} Cʟᴏꜱᴇᴅ 🗑️")
+
 
     if spoll:
         await msg.message.delete()
