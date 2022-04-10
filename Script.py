@@ -7,10 +7,7 @@ class script(object):
 ➢ <b>Build Version</b>: <code>V2.1.0 [BETA]</code>
 ➢ <b>Speciality</b>: <code>Movie Provider</code>
 𝖢𝗅𝗂𝖼𝗄 <b>𝖧𝖾𝗅𝗉</b> 𝗍𝗈 𝗆𝗒 𝖥𝗎𝗇𝖼𝗍𝗂𝗈𝗇𝗌<a href='https://telegra.ph/file/eaf97e4782f05b667e551.jpg'>.</a>"""
-    HELP_TXT = """𝖶𝖺𝗌𝗌𝗎p {},
-about: 𝖳𝗈 𝗄𝗇𝗈𝗐 𝗆𝗒 𝖽𝖾𝗍𝖺𝗂𝗅𝗌
-𝚃𝙰𝙿 𝙾𝙽 𝙴𝙰𝙲𝙷 𝙼𝙾𝙳𝚄𝙻𝙴 𝚃𝙾 𝙶𝙴𝚃 𝚃𝙷𝙴 𝙳𝙴𝚃𝙰𝙸𝙻𝚂 ✨."""
-"""
+    
     HELP_TXT = """<b>𝖧𝖾𝗋𝖾 𝗂𝗌 𝗍𝗁𝖾 𝖴𝗌𝗎𝖺𝗅 𝖼𝗈𝗆𝗆𝖺𝗇𝖽𝗌:</b>
 """
     GTRANS_TXT = """<b>𝖳𝗋𝖺𝗇𝗌𝗅𝖺𝗍𝗈𝗋</b>
