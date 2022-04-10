@@ -90,7 +90,7 @@ async def next_page(bot, query):
             [
                 InlineKeyboardButton(
                         text=f"🐠 [{get_size(file.file_size)}]🐠{file.file_name}🐠", 
-                        callback_data=f'{pre}#{file.file_id}#{msg.from_user.id if msg.from_user is not None else 0}'
+                        callback_data=f'{pre}_#{file.file_id}#{query.from_user.id}'
                 )
             ] 
             for file in files
@@ -100,11 +100,11 @@ async def next_page(bot, query):
             [
                 InlineKeyboardButton(
                     text=f"🐠{file.file_name}🐠",
-                    callback_data=f'{pre}#{file.file_id}#{msg.from_user.id if msg.from_user is not None else 0}',
+                    callback_data=f'{pre}_#{file.file_id}#{query.from_user.id}',
                 ),
                 InlineKeyboardButton(
                     text=f"🐠{get_size(file.file_size)}🐠",
-                    callback_data=f'{pre}_#{file.file_id}#{msg.from_user.id if msg.from_user is not None else 0}',
+                    callback_data=f'{pre}_#{file.file_id}#{query.from_user.id}',
                 )
             ] 
             for file in files
