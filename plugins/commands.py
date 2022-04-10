@@ -21,7 +21,7 @@ logger = logging.getLogger(__name__)
 BATCH_FILES = {}
 
 @Client.on_message(filters.command("start") & filters.incoming & ~filters.edited)
-async def start(client, message: pyrogram.types.Message):
+async def start(client, bot, query, k, message: pyrogram.types.Message):
 
     if message.chat.type in ['group', 'supergroup']:     
         await message.reply_chat_action("Typing")
@@ -76,7 +76,7 @@ async def start(client, message: pyrogram.types.Message):
         await m.delete()
 
 
-        await message.reply_chat_action(bot, query, k)
+        
         
             k = await query.message.edit_text(
             text="▣▢▢▢▢▢"
