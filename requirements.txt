@@ -64,4 +64,4 @@ mapping
 telethon
 yt-dlp
 Heroku3
-
+youtube-dl
