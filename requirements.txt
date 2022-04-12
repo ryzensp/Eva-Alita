@@ -41,7 +41,7 @@ cachetools==4.2.4; python_version >= "3.5" and python_version < "4.0"
 jikanpy
 prettyconf
 ffmpeg
-aiohttp==3.7.4
+
 
 git+https://github.com/subinps/pyrogram@inline-m
 tgcrypto==1.2.2
