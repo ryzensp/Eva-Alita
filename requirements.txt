@@ -89,5 +89,5 @@ Heroku3
 speedtest
 pyyaml==6.0; python_version >= "3.6"
 
-
+carbonnow==0.0.1
 ffmpeg-python
