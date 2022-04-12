@@ -41,6 +41,7 @@ cachetools==4.2.4; python_version >= "3.5" and python_version < "4.0"
 jikanpy
 prettyconf
 ffmpeg
+aiohttp==3.7.4
 
 git+https://github.com/subinps/pyrogram@inline-m
 tgcrypto==1.2.2
@@ -58,7 +59,7 @@ requests
 googletrans==3.1.0a0
 telegraph
 beautifulsoup4
-
+carbonnow==0.0.1
 gTTS
 googletrans==3.1.0a0
 NumPy
@@ -89,6 +90,6 @@ Heroku3
 speedtest
 pyyaml==6.0; python_version >= "3.6"
 
-carbonnow==0.0.1
+
 ffmpeg-python
-aiohttp==3.7.4
+
