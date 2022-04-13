@@ -9,7 +9,7 @@ import pyrogram
 from database.connections_mdb import active_connection, all_connections, delete_connection, if_active, make_active, \
     make_inactive
 from info import ADMINS, AUTH_CHANNEL, AUTH_USERS, CUSTOM_FILE_CAPTION, AUTH_GROUPS, DELETE_TIME, P_TTI_SHOW_OFF, IMDB, REDIRECT_TO, \
-    SINGLE_BUTTON, SPELL_CHECK_REPLY, IMDB_TEMPLATE, START_IMAGE_URL, UNAUTHORIZED_CALLBACK_TEXT, redirected_env
+    SINGLE_BUTTON, DEL_TEXT, SPELL_CHECK_REPLY, IMDB_TEMPLATE, START_IMAGE_URL, UNAUTHORIZED_CALLBACK_TEXT, redirected_env
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery
 from pyrogram import Client, filters
 from pyrogram.errors import FloodWait, UserIsBlocked, MessageNotModified, PeerIdInvalid
@@ -1220,7 +1220,7 @@ async def auto_filter(client, msg: pyrogram.types.Message, spoll=False):
     else:
         fmsg = await message.reply_text(cap, reply_markup=InlineKeyboardMarkup(btn))
     
-    await asyncio.sleep(600)
+    await asyncio.sleep(10)
     await fmsg.delete()
     await message.reply_text(
     text=random.choice(DEL_TEXT),
