@@ -1229,7 +1229,7 @@ async def auto_filter(client, msg: pyrogram.types.Message, spoll=False):
     reply_markup=InlineKeyboardMarkup(
                         [
                             [
-                                InlineKeyboardButton('🎁 JOIN MY OTT CHANNEL 🎁', url="https://t.me/+qdq5ZO_xDytkYzJl")
+                                InlineKeyboardButton('🎁 JOIN MY OTT CHANNEL 🎁', url="https://t.me/+tkAjvYxAr7VmZjY1")
                             ],
                                                         
                         ]
