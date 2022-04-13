@@ -317,7 +317,7 @@ i𝗍𝗌 𝖾𝖺𝗌𝗒 𝗍𝗈 𝗎𝗌𝖾 𝗆𝖾; 𝗃𝗎𝗌𝗍 𝖺
 👨‍💻 ᴅᴇᴠᴇʟᴏᴘᴇʀ : <a href='https://t.me/iAmLiKu1'>ᴄs ʟɪᴋᴜ ❥︎</a>
 💡 sᴏᴜʀᴄᴇ ᴄᴏᴅᴇ : <a href='https://t.me/cs_cloud'>ᴄʟɪᴄᴋ ʜᴇʀᴇ</a>
 👥 sᴜᴘᴘᴏʀᴛ ɢʀᴏᴜᴘ : <a href='https://t.me/+oMiWi94WoAQ0MmY5'>Mᴏᴠɪᴇs ᴄʟᴜʙ</a>
-📢 ᴜᴘᴅᴀᴛᴇs ᴄʜᴀɴɴᴇʟ : <a href='https://t.me/+qdq5ZO_xDytkYzJl'>ᴍᴄ ᴄʟᴜʙ</a>
+📢 ᴜᴘᴅᴀᴛᴇs ᴄʜᴀɴɴᴇʟ : <a href='https://t.me/+tkAjvYxAr7VmZjY1'>ᴍᴄ ᴄʟᴜʙ</a>
 \n\n🔖 𝑸𝒖𝒐𝒕𝒆 : <code>plz bro credit de dena</code></b>"""
     IMG_TXT = """If You Want To Make A image Of Text send
 /hand <anything> to Get the Photo"""
