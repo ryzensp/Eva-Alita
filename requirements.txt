@@ -69,12 +69,3 @@ youtube-dl
 pyrogram
 tgcrypto
 
-google_trans_new
-pymongo
-motor
-dnspython
-requests
-asyncio
-pillow
-GitPython
-heroku3
