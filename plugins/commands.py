@@ -27,10 +27,14 @@ async def start(client, message):
         m=await message.reply_sticker("CAACAgUAAx0CQTCW0gABB5EUYkx6-OZS7qCQC6kNGMagdQOqozoAAgQAA8EkMTGJ5R1uC7PIECME") 
         await asyncio.sleep(2)
         await m.delete()
-        buttons = [[            
-            InlineKeyboardButton('🕵️𝐇𝐞𝐥𝐩🕵️', callback_data='help'),
-            InlineKeyboardButton('😊𝐀𝐛𝐨𝐮𝐭😊', callback_data='about')
-        ]]
+        buttons = [
+            [
+                InlineKeyboardButton('📀 𝖴𝗉𝖽𝖺𝗍𝖾𝗌', url='https://t.me/+tkAjvYxAr7VmZjY1')
+            ],
+            [
+                InlineKeyboardButton('📚 𝖧𝖾𝗅𝗉', url=f"https://t.me/{temp.U_NAME}?start=help"),
+            ]
+            ]
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply(script.START_TXT.format(message.from_user.mention if message.from_user else message.chat.title, temp.U_NAME, temp.B_NAME), reply_markup=reply_markup)
         await asyncio.sleep(2) # 😢 https://github.com/EvamariaTG/EvaMaria/blob/master/plugins/p_ttishow.py#L17 😬 wait a bit, before checking.
@@ -47,10 +51,14 @@ async def start(client, message):
         m=await message.reply_sticker("CAACAgUAAx0CQTCW0gABB5EUYkx6-OZS7qCQC6kNGMagdQOqozoAAgQAA8EkMTGJ5R1uC7PIECME") 
         await asyncio.sleep(2)
         await m.delete()
-        buttons = [[            
-            InlineKeyboardButton('🕵️𝐇𝐞𝐥𝐩🕵️', callback_data='help'),
-            InlineKeyboardButton('😊𝐀𝐛𝐨𝐮𝐭😊', callback_data='about')
-        ]]
+        buttons = [
+            [
+                InlineKeyboardButton('📀 𝖴𝗉𝖽𝖺𝗍𝖾𝗌', url='https://t.me/+tkAjvYxAr7VmZjY1')
+            ],
+            [
+                InlineKeyboardButton('📚 𝖧𝖾𝗅𝗉', url=f"https://t.me/{temp.U_NAME}?start=help"),
+            ]
+            ]
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply_text(
             text=script.START_TXT.format(message.from_user.mention, temp.U_NAME, temp.B_NAME),
@@ -88,10 +96,15 @@ async def start(client, message):
         m=await message.reply_sticker("CAACAgUAAx0CQTCW0gABB5EUYkx6-OZS7qCQC6kNGMagdQOqozoAAgQAA8EkMTGJ5R1uC7PIECME") 
         await asyncio.sleep(2)
         await m.delete()
-        buttons = [[            
-            InlineKeyboardButton('🕵️𝐇𝐞𝐥𝐩🕵️', callback_data='help'),
-            InlineKeyboardButton('😊𝐀𝐛𝐨𝐮𝐭😊', callback_data='about')
-        ]]
+        buttons = [
+        [InlineKeyboardButton("ᴏᴡɴᴇʀ 👑", url="https://t.me/iAmLiKu1")],
+        [
+            InlineKeyboardButton("ʜᴏᴡ ᴛᴏ ᴜsᴇ ❓", callback_data="help"),
+            InlineKeyboardButton("🔹Aʙᴏᴜᴛ🔹", callback_data="about")
+        ],
+        [InlineKeyboardButton("🔰 Mᴏᴠɪᴇs ᴄʜᴀɴɴᴇʟ 🔰", url="https://t.me/+tkAjvYxAr7VmZjY1")],
+        [InlineKeyboardButton("👥 ʀᴇǫᴜᴇsᴛ ɢʀᴏᴜᴘ 👥", url="https://t.me/+oMiWi94WoAQ0MmY5")],
+    ]
         reply_markup = InlineKeyboardMarkup(buttons)
         await message.reply_text(
             caption=script.START_TXT.format(message.from_user.mention, temp.U_NAME, temp.B_NAME),
@@ -140,19 +153,11 @@ async def start(client, message):
                     photo=START_IMAGE_URL if START_IMAGE_URL else random.choice(PICS),                    
                     caption=script.START_TXT.format(message.from_user.mention),                    
                     parse_mode="html",
-                    reply_markup=InlineKeyboardMarkup(
-                         [
-                             [
-                                 InlineKeyboardButton('🎁𝐀𝐝𝐝 𝐌𝐞 𝐓𝐨 𝐘𝐨𝐮𝐫 𝐆𝐫𝐨𝐮𝐩𝐬🎁', url="http://t.me/nasrani_bot?startgroup=true")
-                             ],
-                             [
-                                 InlineKeyboardButton('🧩𝐆𝐨𝐨𝐠𝐥𝐞🧩', url="https://imdb.com"),
-                                 InlineKeyboardButton('☘𝐈𝐦𝐝𝐛☘', url="https://imdb.com")
-                             ]                            
-                         ]
-                     )
-                 )
-                     
+                    reply_markup=InlineKeyboardMarkup( [ [ InlineKeyboardButton("🔰 ɢʀᴏᴜᴘ", url="https://t.me/+oMiWi94WoAQ0MmY5"),
+                                              InlineKeyboardButton("🥰 sʜᴀʀᴇ", url="https://t.me/share/url?url=https://t.me/+oMiWi94WoAQ0MmY5") ],
+                                            [ InlineKeyboardButton("✨ ᴏᴡɴᴇʀ", url="https://t.me/iAmLiKu1") ] ] )
+        )
+                         
        
 
                 await client.send_cached_media(
@@ -160,18 +165,11 @@ async def start(client, message):
                     file_id=msg.get("file_id"),
                     caption=script.START_TXT.format(message.from_user.mention),
                     protect_content=msg.get('protect', False),
-                    reply_markup=InlineKeyboardMarkup(
-                         [
-                             [
-                                 InlineKeyboardButton('🎁𝐀𝐝𝐝 𝐌𝐞 𝐓𝐨 𝐘𝐨𝐮𝐫 𝐆𝐫𝐨𝐮𝐩𝐬🎁', url="https://t.me/+YCA-JWZDNsJkNmI1")
-                             ],
-                             [
-                                 InlineKeyboardButton('🧩𝐆𝐨𝐨𝐠𝐥𝐞🧩', url="https://imdb.com"),
-                                 InlineKeyboardButton('☘𝐈𝐦𝐝𝐛☘', url="https://imdb.com")
-                             ]                            
-                         ]
-                     )
-                 )
+                    reply_markup=InlineKeyboardMarkup( [ [ InlineKeyboardButton("🔰 ɢʀᴏᴜᴘ", url="https://t.me/+oMiWi94WoAQ0MmY5"),
+                                              InlineKeyboardButton("🥰 sʜᴀʀᴇ", url="https://t.me/share/url?url=https://t.me/+oMiWi94WoAQ0MmY5") ],
+                                            [ InlineKeyboardButton("✨ ᴏᴡɴᴇʀ", url="https://t.me/iAmLiKu1") ] ] )
+        )
+                         
             except FloodWait as e:
                 await asyncio.sleep(e.x)
                 logger.warning(f"Floodwait of {e.x} sec.")
