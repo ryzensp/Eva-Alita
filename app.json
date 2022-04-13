@@ -15,8 +15,8 @@
       "index",
       "inline"
     ],
-    "website": "https://github.com/Azanpopz/Eva-Alita",
-    "repository": "https://github.com/Azanpopz/Eva-Alita",
+    "website": "https://github.com/cshowl/Eva-Alita",
+    "repository": "https://github.com/cshowl/Eva-Alita",
     "env": {
         "BOT_TOKEN": {
             "description": "Your bot token.",
