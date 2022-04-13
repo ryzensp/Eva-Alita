@@ -169,7 +169,7 @@ async def advantage_spoll_choker(bot, query):
     if not movies:
         return await query.answer("You are clicking on an old button which is expired.", show_alert=True)
     movie = movies[(int(movie_))]
-    await query.answer('😌താങ്കളുടെ സിനിമ ഉണ്ടോന്ന് പരിശോധിക്കുന്നു... \n\n\n waiting.... \n\n\n')
+    await query.answer('😌Checking for your movie presence... \n\n\n waiting.... \n\n\n')
     
     k = await manual_filters(bot, query.message, text=movie)
     if k == False:
@@ -196,7 +196,7 @@ async def advantage_spoll_choker(bot, query):
             k = await query.message.edit_text(
             text="▣▣▣▣▣▣"
         )
-            k = await query.message.edit('😄നിങ്ങളുടെ മൂവീസ് ഉടനെ ആഡ് ചെയ്യുന്നതാണ്.@nasrani_update_join @munnipopz')
+            k = await query.message.edit('😄നിങ്ങളുടെ മൂവീസ് ഉടനെ ആഡ് ചെയ്യുന്നതാണ്.@cs_cloud @MC_OTT_OP')
         await asyncio.sleep(10000)
         await k.delete()
 
@@ -471,14 +471,14 @@ async def cb_handler(client: Client, query: CallbackQuery):
         try:
             buttons = [
                     [
-                        InlineKeyboardButton('Series', url='https://t.me/NasraniSeries'),
-                        InlineKeyboardButton('Movies', url='https://t.me/nasrani_update'),
+                        InlineKeyboardButton('Mᴄ Cʟᴜʙ', url='https://t.me/+tkAjvYxAr7VmZjY1'),
+                        InlineKeyboardButton('Mᴄ Oᴛᴛ', url='https://t.me/MC_OTT_OP'),
                     ]
                     ]
             msg = await client.send_cached_media(
                 chat_id=AUTH_CHANNEL,
                 file_id=file_id,
-                caption=f'<b> 𝐇𝐞𝐲 👋 {query.from_user.mention} </b>😍\n 📂 Mᴏᴠɪᴇ Nᴀᴍᴇ : <code>{title}</code>\n ⚙️ Mᴏᴠɪᴇ Sɪᴢᴇ: {size}  \n\n⚠️ കോപ്പി റൈറ്റ് ഉള്ളത് കൊണ്ട് ഈ ഒരു ഫയൽ 5 മിനിറ്റ് കൊണ്ട് ഇവിടെ നിന്നും ഡിലേറ്റാവും...!!!\n\n\nഇവിടെ നിന്നും വേറെ എവിടേലും മാറ്റിയതിന് ശേഷം ഡൗൺലോഡ് ചെയ്യുക...!!!\nFILES FORWARD TO YOUR SAVED MESSAGES\n\n\nAll files here Gets Deleted With in 5 Minutes\n╔════ ᴊᴏɪɴ ᴡɪᴛʜ ᴜs ═════╗\n\n♻️ 𝙅𝙊𝙄𝙉 :- @nasrani_update\n♻️ 𝙅𝙊𝙄𝙉 :- @NasraniSeries\n╚════ ᴊᴏɪɴ ᴡɪᴛʜ ᴜs ═════╝</b>\n',
+                caption=f'<b> 𝐇𝐞𝐲 👋 {query.from_user.mention} </b>😍\n 📂 Mᴏᴠɪᴇ Nᴀᴍᴇ : <code>{title}</code>\n ⚙️ Mᴏᴠɪᴇ Sɪᴢᴇ: {size}  \n\n⚠️ കോപ്പി റൈറ്റ് ഉള്ളത് കൊണ്ട് ഈ ഒരു ഫയൽ 5 മിനിറ്റ് കൊണ്ട് ഇവിടെ നിന്നും ഡിലേറ്റാവും...!!!\n\n\nഇവിടെ നിന്നും വേറെ എവിടേലും മാറ്റിയതിന് ശേഷം ഡൗൺലോഡ് ചെയ്യുക...!!!\nFILES FORWARD TO YOUR SAVED MESSAGES\n\n\nAll files here Gets Deleted With in 5 Minutes\n╔════ ᴊᴏɪɴ ᴡɪᴛʜ ᴜs ═════╗\n\n♻️ 𝙅𝙊𝙄𝙉 :- @MC_OTT_OP\n♻️ 𝙅𝙊𝙄𝙉 :- @cs_cloud\n╚════ ᴊᴏɪɴ ᴡɪᴛʜ ᴜs ═════╝</b>\n',
                 
                 protect_content=True if ident == "filep" else False,
                 reply_markup=InlineKeyboardMarkup(buttons)
@@ -496,7 +496,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                             InlineKeyboardButton(f'ɪɴғᴏ', 'infos')
                         ],
                         [
-                            InlineKeyboardButton("⚠️ Can't Access ❓ Click Here ⚠️", url=f'https://t.me/+Md9dwytUK1NhNTc9')
+                            InlineKeyboardButton("⚠️ Can't Access ❓ Click Here ⚠️", url=f'https://t.me/+Divgw7Gk2WVlMTI1')
                         ],                       
                         [
                             InlineKeyboardButton('📥 Download 📥 ', url = msg.link)
@@ -553,15 +553,15 @@ async def cb_handler(client: Client, query: CallbackQuery):
     elif query.data == "pages":
         await query.answer()
     elif query.data == "start":
-        buttons = [[
-            InlineKeyboardButton('🎁𝐀𝐝𝐝 𝐌𝐞 𝐓𝐨 𝐘𝐨𝐮𝐫 𝐆𝐫𝐨𝐮𝐩𝐬🎁', url=f'http://t.me/{temp.U_NAME}?startgroup=true')
-            ],[
-            InlineKeyboardButton('🔍𝐒𝐞𝐚𝐫𝐜𝐡🔎', switch_inline_query_current_chat=''),
-            InlineKeyboardButton('🎭𝐔𝐩𝐝𝐚𝐭𝐞𝐬🎭', url='https://t.me/mazhatthullikal')
-            ],[
-            InlineKeyboardButton('🕵️𝐇𝐞𝐥𝐩🕵️', callback_data='help'),
-            InlineKeyboardButton('😊𝐀𝐛𝐨𝐮𝐭😊', callback_data='about')
-        ]]
+        buttons = [
+        [InlineKeyboardButton("ᴏᴡɴᴇʀ 👑", url="https://t.me/iAmLiKu1")],
+        [
+            InlineKeyboardButton("ʜᴏᴡ ᴛᴏ ᴜsᴇ ❓", callback_data="help"),
+            InlineKeyboardButton("🔹Aʙᴏᴜᴛ🔹", callback_data="about")
+        ],
+        [InlineKeyboardButton("🔰 Mᴏᴠɪᴇs ᴄʜᴀɴɴᴇʟ 🔰", url="https://t.me/+tkAjvYxAr7VmZjY1")],
+        [InlineKeyboardButton("👥 ʀᴇǫᴜᴇsᴛ ɢʀᴏᴜᴘ 👥", url="https://t.me/+oMiWi94WoAQ0MmY5")],
+    ]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
             text="▣▢▢▢▢▢"
@@ -1145,7 +1145,7 @@ async def auto_filter(client, msg: pyrogram.types.Message, spoll=False):
     )
     btn.insert(14,
         [
-            InlineKeyboardButton(f"🐟{message.chat.title}🐟",url="https://t.me/nasrani_update"),
+            InlineKeyboardButton(f"🐟{message.chat.title}🐟",url="https://t.me/MC_OTT_OP"),
             InlineKeyboardButton(f"🦄{message.from_user.id}🦄",url="tg://openmessage?user_id={user_id}")
         ]
     )
@@ -1229,7 +1229,7 @@ async def auto_filter(client, msg: pyrogram.types.Message, spoll=False):
     reply_markup=InlineKeyboardMarkup(
                         [
                             [
-                                InlineKeyboardButton('🎁𝐀𝐝𝐝 𝐌𝐞 𝐓𝐨 𝐘𝐨𝐮𝐫 𝐆𝐫𝐨𝐮𝐩𝐬🎁', url="http://t.me/nasrani_update")
+                                InlineKeyboardButton('🎁 JOIN MY OTT CHANNEL 🎁', url="http://t.me/MC_OTT_OP")
                             ],
                                                         
                         ]
@@ -1284,7 +1284,7 @@ async def advantage_spell_chok(msg):
         reply_markup=InlineKeyboardMarkup(
                         [
                             [
-                                InlineKeyboardButton('🎁𝐀𝐝𝐝 𝐌𝐞 𝐓𝐨 𝐘𝐨𝐮𝐫 𝐆𝐫𝐨𝐮𝐩𝐬🎁', url="http://t.me/nasrani_bot?startgroup=true")
+                                InlineKeyboardButton('🎁𝐀𝐝𝐝 𝐌𝐞 𝐓𝐨 𝐘𝐨𝐮𝐫 𝐆𝐫𝐨𝐮𝐩𝐬🎁', url="http://t.me/Cshowl_bot?startgroup=true")
                             ],
                             [
                                 InlineKeyboardButton('🧩𝐆𝐨𝐨𝐠𝐥𝐞🧩', url="https://google.com"),
