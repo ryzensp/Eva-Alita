@@ -1219,7 +1219,7 @@ async def auto_filter(client, msg: pyrogram.types.Message, spoll=False):
     else:
         fmsg = await message.reply_text(cap, reply_markup=InlineKeyboardMarkup(btn))
     
-    await asyncio.sleep(60)
+    await asyncio.sleep(300)
     await fmsg.delete()
     await message.reply_text(
     text=random.choice(DEL_TEXT),
@@ -1245,11 +1245,11 @@ async def advantage_spell_chok(msg):
     g_s += await search_gagala(msg.text)
     gs_parsed = []
     if not g_s:
-        k = await msg.reply("നിങ്ങൾ ചോദിക്കുന്ന മൂവി ഇതിലുണ്ടോന്ന് ഉറപ്പ് വരുത്തുക.")
-        await asyncio.sleep(30)
+        k = await msg.reply("Make sure the movie you are asking for is in it.")
+        await asyncio.sleep(300)
         await k.delete()
         return
-        await asyncio.sleep(30)
+        await asyncio.sleep(300)
         await k.delete()
         return
     regex = re.compile(r".*(imdb|wikipedia).*", re.IGNORECASE) # look for imdb / wiki results
@@ -1277,7 +1277,7 @@ async def advantage_spell_chok(msg):
           
         k = await msg.reply_video(
         video= "https://telegra.ph/file/ec5404d035924f1113d8d.mp4",
-        caption=f"<b>📍Hello:-നിങ്ങൾ ചോദിച്ച മൂവി വേണമെങ്കിൽ മുകളിലെ വീഡിയോ കണ്ട് അത് പോലെ സ്പെല്ലിങ് തെറ്റാതെ അയക്കുക.😌</b>",
+        caption=f"<b>📍Hello:-If you want the movie you asked for, watch the video above and send it without any spelling mistakes.😌 from</b>",
         parse_mode="html",
         reply_markup=InlineKeyboardMarkup(
                         [
@@ -1295,7 +1295,7 @@ async def advantage_spell_chok(msg):
 
                             
 
-        await asyncio.sleep(60)
+        await asyncio.sleep(30)
         await k.delete()
         return
     SPELL_CHECK[msg.message_id] = movielist
@@ -1323,7 +1323,7 @@ async def advantage_spell_chok(msg):
     k = await msg.reply_sticker(
         sticker= "CAACAgUAAxkBAAJXA2GiaMWYAAEvGr39FQLCuU_qW4rH1AACHwADhq-BGkoDm80BdFrWIgQ",
         reply_markup=InlineKeyboardMarkup(btn))
-    await asyncio.sleep(60)
+    await asyncio.sleep(20)
     await k.delete()
     return k
 async def manual_filters(client, message, text=False):
