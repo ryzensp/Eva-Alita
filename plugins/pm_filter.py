@@ -1219,7 +1219,7 @@ async def auto_filter(client, msg: pyrogram.types.Message, spoll=False):
     else:
         fmsg = await message.reply_text(cap, reply_markup=InlineKeyboardMarkup(btn))
     
-    await asyncio.sleep(10)
+    await asyncio.sleep(60)
     await fmsg.delete()
     await message.reply_text(
     text=random.choice(DEL_TEXT),
@@ -1246,7 +1246,7 @@ async def advantage_spell_chok(msg):
     gs_parsed = []
     if not g_s:
         k = await msg.reply("നിങ്ങൾ ചോദിക്കുന്ന മൂവി ഇതിലുണ്ടോന്ന് ഉറപ്പ് വരുത്തുക.")
-        await asyncio.sleep(8)
+        await asyncio.sleep(30)
         await k.delete()
         return
         await asyncio.sleep(8)
